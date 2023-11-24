@@ -42,7 +42,7 @@ CREATE TABLE class (
     contact_phone INT NOT NULL, 
     contact_email VARCHAR(50),
     PRIMARY KEY (class_id),
-    FOREIGN KEY (venue_id) REFERNCES venue("venue_id")
+    FOREIGN KEY (venue_id) REFERENCES venue("venue_id")
 );
 
 
