@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 
-const logRoutes = require('./middleware/logger')
+const logRoutes = require('./middleware/logger');
+const userRouter = require('./routers/user');
 
 const api = express();
 
@@ -15,6 +16,8 @@ api.get("/", (req, res) => {
         description: "Group project 2"
     })
 })
+
+api.use("/users", userRouter)
 
 module.exports = api;
 
