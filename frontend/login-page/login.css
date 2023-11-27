@@ -19,15 +19,18 @@
 
 .submitButtons {
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 20px;
     text-decoration: none;
     font-weight: 300;
     color: #FFFFFF;
-    height:50px;
-    width:100px;
+    height:37px;
+    width:150px;
     background-color: #333;
     text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
 }
+
+
 
 .submitButtons:hover {
   background-color: #707070;
@@ -35,15 +38,22 @@
 }
 
 input { 
-  border-radius: 20px;
   height:30px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 2px 5px;
+}
+
+input:focus {
+  border:none !important;
+  border-bottom: 1px solid #000000;
 }
 
 
 
 #signupBox  {
   border-radius: 20px;
-  border: 1px black solid;
+  border: 1px solid #f0f0f0;
   background-color: #f0f0f0;
 }
   
@@ -120,6 +130,7 @@ input {
 #createmessage{
   color:rgb(0, 0, 0);
 }
+
 
 
 
