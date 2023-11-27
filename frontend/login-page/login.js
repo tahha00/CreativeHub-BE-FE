@@ -75,7 +75,6 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         setTimeout(() => {
             window.location.assign("login.html");
           }, "2000")
-        window.location.assign("login.html");
     } else {
         alert(data.error);
     }
