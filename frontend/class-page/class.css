@@ -1,5 +1,5 @@
 body {
-  background-color: gray;
+  background-color: rgb(88, 88, 88);
 }
 
 
@@ -118,5 +118,40 @@ body {
   margin-top: 40px;
 }
 
+.reviewsSectionTitle {
+  font-family: 'Monoton', monospace;
+  color: white;
+  padding: 10px 80px;
+  font-size: 30px;
+}
+
+#typeReview {
+  margin-top: -40px;
+  margin-left: 80px;
+}
+
+.reviewTitle {
+  font-family: 'Monoton', monospace;
+  color: white;
+  padding: 10px 80px;
+  font-size: 30px;
+}
+
+.userReviews {
+    font-family: 'Bebas Neue', monospace;
+    padding: 10px 80px;
+    margin-top: -30px;
+    font-size: 25px;
+    width: 50%;
+    color: white;
+}
+
+.submitReviewTitle {
+  font-family: 'Monoton', monospace;
+  color: white;
+  padding: 10px 80px;
+  font-size: 20px;
+  margin-top: 50px;
+}
 
  
