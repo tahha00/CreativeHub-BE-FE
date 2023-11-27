@@ -19,7 +19,7 @@ class User {
     static async getOneByUsername(username) {
         const response = await db.query("SELECT * FROM user_account WHERE username = $1", [username]);
         if (response.rows.length != 1) {
-            throw new Error("Unable to locate user.");
+            throw new Error("Unable to locate user - You must have a registered account to sign in.");
         }
         return new User(response.rows[0]);
     }

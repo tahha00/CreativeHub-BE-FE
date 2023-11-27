@@ -43,7 +43,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         localStorage.setItem("token", data.token);
         window.location.assign("../class-page/class.html");
     } else {
-        loginerror.textContent = `${data.error} - You must create an account to sign in`
+        loginerror.textContent = `${data.error}`
         console.log(data.error);
     }
 })
