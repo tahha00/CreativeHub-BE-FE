@@ -1,4 +1,5 @@
 const list = document.getElementById('list');
+const classContainer= document.getElementById('classContainer')
 
 
 
@@ -36,11 +37,6 @@ const showDropdown = document.querySelector("#myInput")
 showDropdown.addEventListener("click", myFunction);
 
 
-
-
-
-
-
 //This code initializes the date range picker using the jQuery library, allowing users to select date ranges.
 $(function() {
     $('input[name="daterange"]').daterangepicker({
@@ -50,3 +46,11 @@ $(function() {
     });
   });
 
+
+
+  
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+
+  });
