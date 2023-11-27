@@ -1,3 +1,8 @@
+body {
+  background-color: gray;
+}
+
+
 .topnav {
     background-color: #333;
     display: flex;
@@ -33,5 +38,85 @@
     object-fit: cover;
     margin: 20px;
     border-radius: 40px;
+    opacity: 85%;
   }
 
+  .title {
+    font-family: 'Monoton', monospace;
+    color: white;
+    padding: 10px 80px;
+    margin-top: -30px;
+    font-size: 50px;
+  }
+
+  .text {
+    font-family: 'Bebas Neue', monospace;
+    padding: 10px 80px;
+    margin-top: -30px;
+    font-size: 25px;
+    width: 50%;
+    color: white;
+  }
+
+  .teacher {
+    font-family: 'Monoton', monospace;
+    color: white;
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+
+  .bookingWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 70px;
+  }
+  
+  .bookingSection {
+    padding: 20px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 300px;
+    height: 400px;
+    width: 300px;
+    border-radius: 30px;
+  }
+
+  .dateBtn {
+    border-radius: 30px;
+    background-color: grey;
+    color: white;
+    height: 50px
+  }
+
+  .bookBtn {
+    border-radius: 30px;
+    background-color: grey;
+    color: white;
+    height: 50px;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .options input[type="radio"] {
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10%
+}
+
+.buttonContainer button {
+  margin-top: 40px;
+}
+
+
+ 
