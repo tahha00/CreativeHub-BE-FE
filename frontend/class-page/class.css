@@ -150,6 +150,7 @@ body {
 
 }
 
+
 .userReviews {
     font-family: 'Bebas Neue', monospace;
     padding: 10px 80px;
@@ -157,6 +158,8 @@ body {
     font-size: 25px;
     width: 50%;
     color: white;
+    margin: 10%;
+    margin-left: 0%;
 }
 
 .submitReviewTitle {
