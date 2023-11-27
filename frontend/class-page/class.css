@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(88, 88, 88);
+  background-color: rgb(232, 232, 232);
 }
 
 
@@ -42,25 +42,25 @@ body {
   }
 
   .title {
-    font-family: 'Monoton', monospace;
-    color: white;
+    font-family: 'Heebo', monospace;
+    color: black;
     padding: 10px 80px;
     margin-top: -30px;
     font-size: 50px;
   }
 
   .text {
-    font-family: 'Bebas Neue', monospace;
+    font-family: 'Roboto', monospace;
     padding: 10px 80px;
     margin-top: -30px;
     font-size: 25px;
     width: 50%;
-    color: white;
+    color: black;
   }
 
   .teacher {
-    font-family: 'Monoton', monospace;
-    color: white;
+    font-family: 'Heebo', monospace;
+    color: black;
     padding: 10px 80px;
     font-size: 30px;
   }
@@ -68,7 +68,7 @@ body {
   .bookingWrapper {
     display: flex;
     justify-content: flex-end;
-    margin-right: 70px;
+    margin-right: 150px;
   }
   
   .bookingSection {
@@ -82,6 +82,7 @@ body {
     height: 400px;
     width: 300px;
     border-radius: 30px;
+    border: 3px solid black;
   }
 
   .dateBtn {
@@ -119,8 +120,8 @@ body {
 }
 
 .reviewsSectionTitle {
-  font-family: 'Monoton', monospace;
-  color: white;
+  font-family: 'Heebo', monospace;
+  color: black;
   padding: 10px 80px;
   font-size: 30px;
 }
@@ -134,8 +135,8 @@ body {
 }
 
 .reviewTitle {
-  font-family: 'Monoton', monospace;
-  color: white;
+  font-family: 'Heebo', monospace;
+  color: black;
   padding: 10px 80px;
   font-size: 30px;
 }
@@ -143,8 +144,8 @@ body {
 #submitReviewBtn {
   border-radius: 10px;
   border: 3px solid black;
-  background-color: grey;
-  color: white;
+  background-color: rgb(210, 210, 210);
+  color: black;
   height: 50px;
   width: 80px;
 
@@ -152,19 +153,19 @@ body {
 
 
 .userReviews {
-    font-family: 'Bebas Neue', monospace;
+    font-family: 'Roboto', monospace;
     padding: 10px 80px;
     margin-top: -30px;
     font-size: 25px;
     width: 50%;
-    color: white;
+    color: black;
     margin: 10%;
     margin-left: 0%;
 }
 
 .submitReviewTitle {
-  font-family: 'Monoton', monospace;
-  color: white;
+  font-family: 'Heebo', monospace;
+  color: black;
   padding: 10px 80px;
   font-size: 20px;
   margin-top: 50px;
