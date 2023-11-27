@@ -18,13 +18,17 @@ async function login (req, res) {
     try {
         const data = req.body;
         const user = await User.getOneByUsername(data.username)
+        
 
         const authenticated = await bcrypt.compare(data.password, user.password)
+        
         if (!authenticated) {
             throw new Error("Incorrect credentials")
         } else {
             const token = await Token.create(user.id)
+            console.log(token)
             res.status(200).json({ authenticated: true, token: token.token })
+        
         }
     } catch (err) {
         res.status(404).json({ error: err.message })
