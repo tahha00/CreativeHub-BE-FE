@@ -13,8 +13,63 @@
         <a href="#class">Classes</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-        <a href="#logout">Logout</a>
+        <a id = "logout" href = "login.html">Logout</a>
       </div>
+
+      <div id = container>
+
+      <div class="overlay" id="registerModal"></div>
+      
+  <div class="modal" id="modal-content">
+    <span id="close-btn" >&times;</span>
+    <p>You can register here!</p>
+    <form id="register-form">
+            
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <br>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <br>
+        <br>
+   
+    <input type="submit" value="Register">
+    <br>
+    <p id = "createmessage"></p>
+
+    </form>
+  </div>
+
+
+      
+      <div id="login-container">
+        <form id="login-form">
+            
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <br>
+                <br>
+                <br>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <br>
+                <br>
+                <br>
+           
+            <input type="submit" value="Log in" id = "loginButton">
+            <br>
+            <p id = "errormsg"></p>
+            <p>No account? <button type = 'button' id= "registerDisplay" > Sign up</button></p>
+        </form>
+      </div>
+     </div>
+
+
     
 </body>
 </html>
