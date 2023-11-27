@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <title>Florin County</title>
 </head>
 <body>
-    <section>
-        <form>
+    <div class="search-container">
             <label> Search a Class </label>
         <input type="text" placeholder="Search">
+       
+        <input type="text" name="daterange" value="12/01/2023 - 12/24/2023" />
+            
+            <option value="difficulty">Difficulty</option>
         <button id="formButton"> Submit</button>
        </form>
        
-        <label for="location">Choose location/label> 
-        <select name="location_names" id="location_names"> 
+        <label for="location">Choose location </label>
+    <select name="location_names" id="location_names"> 
         <option value="FlorinTownhall">Florin Town Hall</option> 
         <option value="FlorinSecondarySchool">Florin Secondary School</option> 
         <option value="FlorinCountyLibrary">Florin County Library</option> 
@@ -27,6 +34,10 @@
 
        
     </section>
+        </form>
+
+        
+    </div>
 
     
 </body>
