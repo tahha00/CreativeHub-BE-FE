@@ -1,5 +1,5 @@
 const list = document.getElementById('list');
-const classContainer= document.getElementById('classContainer')
+
 
 
 
@@ -14,6 +14,8 @@ function myFunction() {
         list.style.display = 'none';
       };
   }
+
+
   //code to filter dropdown list items based on user input
   function filterFunction() {
     let input, filter, ul, li, a, i;
@@ -32,7 +34,6 @@ function myFunction() {
   }
 
 
-
 const showDropdown = document.querySelector("#myInput")
 showDropdown.addEventListener("click", myFunction);
 
@@ -48,9 +49,27 @@ $(function() {
 
 
 
-  
+function fetchClasses (){
+    fetch("http://localhost:3000/class")
+    .then(resp => resp.json())
+    .then(data => displayClasses(data))
+}
 
-  document.addEventListener('DOMContentLoaded', function () {
+function displayClasses (data) {
+ const classContainer= document.getElementById('classContainer');
 
-
+ data.forEach(cls => {
+    const classElement = document.createElement('div');
+    classElement.innerHTML = `
+    <h2>${cls.name}</h2>
+    <p>Venue: ${cls.venue}</p>
+    <p>Review: ${cls.review}</p>
+    <img src="${cls.photo}" alt="Class Photo">
+    <p>Date: ${cls.date}</p>
+`;
+classElement.classList.add('class-separator');
+classContainer.appendChild(classElement);
   });
+}
+
+document.addEventListener('DOMContentLoaded', fetchClasses)
