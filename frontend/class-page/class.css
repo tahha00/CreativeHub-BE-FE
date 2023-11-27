@@ -18,3 +18,20 @@
     background-color: #ddd;
     color: black;
   }
+
+  .woodworkImages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 50px;
+    
+  }
+
+  .woodworkImages img {
+    width: 20%;
+    height: 250px;
+    object-fit: cover;
+    margin: 20px;
+    border-radius: 40px;
+  }
+
