@@ -22,22 +22,24 @@
       
   <div class="modal" id="modal-content">
     <span id="close-btn" >&times;</span>
-    <p>You can register here!</p>
+    <br>
+    <h2>Account Registration</h2>
+    <br>
     <form id="register-form">
             
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
+       
+        <input type="text" id="username" name="username" placeholder = "username">
         <br>
         <br>
         <br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
+        
+        <input type="password" id="password" name="password" placeholder="password">
         <br>
         <br>
         <br>
    
-    <input type="submit" value="Register">
+    <input type="submit" value="Register" class = "submitButtons">
     <br>
     <p id = "createmessage"></p>
 
@@ -48,23 +50,29 @@
       
       <div id="login-container">
         <form id="login-form">
+            <h2>Log in to your account</h2>
+            <br>
             
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
+                
+                <input type="text" id="username" name="username"
+                placeholder="username">
                 <br>
                 <br>
                 <br>
         
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                
+                <input type="password" id="password" name="password" placeholder = "password">
                 <br>
                 <br>
                 <br>
            
-            <input type="submit" value="Log in" id = "loginButton">
+            <input type="submit" value="Log in" id = "loginButton" class = "submitButtons">
             <br>
             <p id = "errormsg"></p>
-            <p>No account? <button type = 'button' id= "registerDisplay" > Sign up</button></p>
+            <br>
+            <div id = signupBox>
+            <p>No account? <button type = 'button' id= "registerDisplay" class= "submitButtons" > Sign up</button></p>
+            </div>
         </form>
       </div>
      </div>

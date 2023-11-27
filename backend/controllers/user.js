@@ -23,7 +23,7 @@ async function login (req, res) {
         const authenticated = await bcrypt.compare(data.password, user.password)
         
         if (!authenticated) {
-            throw new Error("Incorrect credentials")
+            throw new Error("Incorrect credentials - Password or Username is incorrect")
         } else {
             const token = await Token.create(user.id)
             console.log(token)
