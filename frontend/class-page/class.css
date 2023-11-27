@@ -87,15 +87,17 @@ body {
 
   .dateBtn {
     border-radius: 30px;
-    background-color: grey;
-    color: white;
+    border: 2px solid black;
+    background-color: rgb(210, 210, 210);
+    color: black;
     height: 50px
   }
 
   .bookBtn {
     border-radius: 30px;
-    background-color: grey;
-    color: white;
+    border: 2px solid black;
+    background-color: rgb(210, 210, 210);
+    color: black;
     height: 50px;
   }
 
@@ -159,7 +161,7 @@ body {
     font-size: 25px;
     width: 50%;
     color: black;
-    margin: 10%;
+    margin: 8%;
     margin-left: 0%;
 }
 
