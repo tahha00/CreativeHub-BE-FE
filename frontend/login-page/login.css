@@ -21,3 +21,74 @@
     background-color: #04AA6D;
     color: white;
   } */
+
+  #container{
+    display:flex;
+    justify-content: center;
+    height:100vh;
+  }
+
+#login-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius:10px;
+  width:400px;
+  margin:auto;
+  padding:40px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-size:20px;
+}
+
+
+
+#registerModal{
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 200px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.35); 
+  
+}
+
+#modal-content{
+  display:none;
+  z-index:200;
+  font-size: 20px;
+  background-color: white;
+  position:fixed;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px;
+  height:500px;
+  border-radius: 20px;
+  box-shadow: #000;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  text-align:center;
+}
+
+#close-btn{
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  font-size: 32px;
+}
+
+#errormsg{
+  color:rgb(214, 108, 108)
+  
+}
+
+#createmessage{
+  color:rgb(0, 0, 0);
+}
+
+
