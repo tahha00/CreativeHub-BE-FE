@@ -2,8 +2,6 @@ const list = document.getElementById('list');
 
 
 
-
-
 /* When the user clicks on the button,
  shows the dropdown content */
 function myFunction() {
@@ -34,8 +32,7 @@ function myFunction() {
   }
 
 
-const showDropdown = document.querySelector("#myInput")
-showDropdown.addEventListener("click", myFunction);
+
 
 
 //This code initializes the date range picker using the jQuery library, allowing users to select date ranges.
@@ -49,22 +46,26 @@ $(function() {
 
 
 
+
+
+
 function fetchClasses (){
-    fetch("http://localhost:3000/class")
+    fetch('http://localhost:3000/class')
     .then(resp => resp.json())
     .then(data => displayClasses(data))
 }
 
 function displayClasses (data) {
  const classContainer= document.getElementById('classContainer');
+ classContainer.innerHTML = '';
 
  data.forEach(cls => {
     const classElement = document.createElement('div');
     classElement.innerHTML = `
+    <img src="${cls.photo}" alt="Class Photo">
     <h2>${cls.name}</h2>
     <p>Venue: ${cls.venue}</p>
     <p>Review: ${cls.review}</p>
-    <img src="${cls.photo}" alt="Class Photo">
     <p>Date: ${cls.date}</p>
 `;
 classElement.classList.add('class-separator');
@@ -72,4 +73,25 @@ classContainer.appendChild(classElement);
   });
 }
 
+
+//calendar and location filters 
+
+function applyFilters(event){
+    event.preventDefault(); 
+    const dateRange = document.querySelector('input[name="daterange"]').value;
+    const location = document.querySelector('#location_names').value;
+
+   
+
+   
+}
+
+
+
+
+const showDropdown = document.querySelector("#myInput")
+showDropdown.addEventListener("click", myFunction);
+
 document.addEventListener('DOMContentLoaded', fetchClasses)
+
+filtersButton.addEventListener('click', applyFilters)

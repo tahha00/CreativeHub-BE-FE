@@ -41,7 +41,8 @@
 <form>
     <input type="text" name="daterange" value="12/01/2023 - 12/24/2023" />
         <label for="location">Choose location </label>
-    <select name="location_names" id="location_names"> 
+    <select name="location_names" id="location_names">
+        <option value="allLocations">All locations</option>  
         <option value="FlorinTownhall">Florin Town Hall</option> 
         <option value="FlorinSecondarySchool">Florin Secondary School</option> 
         <option value="FlorinCountyLibrary">Florin County Library</option> 
@@ -49,7 +50,7 @@
         <option value="FlorinHistoricalCentre">Florin Historical Centre</option> 
     </select>
             
-        <button id="formButton"> Submit</button>
+        <button id="filtersButton"> Apply filters</button>
  </form>  
  <div id="classContainer" class="class-container"></div>
     </section>    
