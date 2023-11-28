@@ -1,5 +1,10 @@
+
+body{
+    background-image: url('./img/brown\ bakcground.jpg');
+    background-size: contain;
+}
+
 .topnav {
-    background-color: #333;
     overflow: hidden;
     display: flex;
     justify-content: flex-end;
@@ -19,23 +24,26 @@
   }
 
 
+  .logo {
+    width: 25%;
+  }
+
+
 .search-section{
     text-align: center;
-    margin-top: 20px; 
-    height: 300px;
-    padding: 20px;
+    margin-bottom: 150px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #fff; /* Add a background color */
 }
 
 #searchTitle {
     font-family: 'Roboto', monospace;
     font-size: 25px;
-    color: black;
+    color: rgb(248, 244, 244);
 }
 
 #myInput{
@@ -52,7 +60,8 @@
     background-color: #f9f9f9;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 300px;
-    height: 300px;
+    max-height: 300px;
+    overflow-y: auto;
     border-radius: 10px;
 }
 
@@ -68,14 +77,19 @@
     background-color: #ddd;
 }
 .filterContainer{
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 50px;
     justify-content:space-evenly;
+
 }
 .class-container {
-    margin-top: 50px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
