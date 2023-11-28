@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="class.js"></script>
+    <link rel="stylesheet" href="class.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto&display=swap" rel="stylesheet">
+    <title>Classes</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#class">Classes</a>
+        <a href="#booking">Bookings</a>
+        <a href="#logout">Logout</a>
+      </div>
+
+      <div class = "images">
+        <img class = "img" src="./images/woodwork1.jpg" alt="A woman marking measurements on her plank of wood.">
+        <img class = "img" src="./images/woodwork2.jpg" alt="Wood shavings next to a wood plank and wood chisel.">
+      </div>
+
+      <h1 class="title">Woodworking</h1>
+      <section class="text">Unlock the artistry of woodworking in Florin's immersive woodworking class! This hands-on experience is designed for enthusiasts of all skill levels, from beginners eager to explore the fundamentals to seasoned craftsmen looking to refine their techniques.</section>
+      <h2 class="teacher">Teacher</h2>
+      <section class = "text">Title ....</section>
+
+    <div class = "bookingWrapper">
+      <div class ="bookingSection">
+        <div class="options">
+          <label>
+            <input type="radio" name="skillLevel" value="beginner"> Beginner
+          </label>
+          <label>
+            <input type="radio" name="skillLevel" value="intermediate"> Intermediate
+          </label>
+          <label>
+            <input type="radio" name="skillLevel" value="advanced"> Advanced
+          </label>
+        </div>
+        <div class = "buttonContainer">
+          <button class = "dateBtn">SELECT DATE AND TIME</button>
+          <button class = "bookBtn">BOOK YOUR CLASS</button>
+        </div>
+      </div>
+    </div>
+    <div class = "reviewSection">
+      <h2 class="reviewsSectionTitle">Reviews</h2>
+      <p1 class="userReviews">REVIEW 1</p1>
+      <p2 class="userReviews">REVIEW 2</p2>
+      <p3 class="userReviews">REVIEW 3</p3>
+      <p4 class="userReviews">REVIEW 4</p4>
+      </div>
+
+      <div class="submitReviewSection">
+      <form>
+        <h2 class="submitReviewTitle">Submit your review</h2>
+      <label for="review"></label><br>
+        <textarea id="content" name="review" rows="4" cols="50">Write your review!</textarea>
+        <input id="submitReviewBtn" type="submit" value="Submit">
+      </form>
+    </div>
+      
+</body>
+</html>

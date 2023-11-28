@@ -13,8 +13,73 @@
         <a href="#class">Classes</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-        <a href="#logout">Logout</a>
+        <a id = "logout" href = "login.html">Logout</a>
       </div>
+
+      <div id = container>
+
+      <div class="overlay" id="registerModal"></div>
+      
+  <div class="modal" id="modal-content">
+    <span id="close-btn" >&times;</span>
+    <br>
+    <h2>Account Registration</h2>
+    <br>
+    <form id="register-form">
+            
+       
+        <input type="text" id="username" name="username" placeholder = "username">
+        <br>
+        <br>
+        <br>
+
+        
+        <input type="password" id="password" name="password" placeholder="password">
+        <br>
+        <br>
+        <br>
+   
+    <input type="submit" value="Register" class = "submitButtons">
+    <br>
+    <p id = "createmessage"></p>
+
+    </form>
+  </div>
+
+
+      
+      <div id="login-container">
+        <form id="login-form">
+        
+            <h2>Log in to your account</h2>
+            <br>
+            
+            
+                
+                <input type="text" id="username" name="username"
+                placeholder="username">
+                <br>
+                <br>
+                <br>
+        
+                
+                <input type="password" id="password" name="password" placeholder = "password">
+                <br>
+                <br>
+                <br>
+           
+            <input type="submit" value="Log in" id = "loginButton" class = "submitButtons">
+            <br>
+            <p id = "errormsg"></p>
+            <br>
+            <div id = signupBox>
+            <p>No account? <button type = 'button' id= "registerDisplay" class= "submitButtons" > Sign up</button></p>
+            </div>
+        </form>
+      </div>
+     </div>
+
+
     
 </body>
 </html>

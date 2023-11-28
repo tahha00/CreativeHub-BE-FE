@@ -2,8 +2,10 @@ const express = require('express');
 const cors = require('cors');
 
 const logRoutes = require('./middleware/logger');
+
 const userRouter = require('./routers/user');
 const classesRouter = require ('./routers/classes');
+const reviewRouter = require("./routers/reviews")
 
 const api = express();
 
@@ -21,6 +23,7 @@ api.get("/", (req, res) => {
 
 api.use("/users", userRouter)
 api.use("/class", classesRouter)
+api.use("/reviews", reviewRouter)
 
 module.exports = api;
 
