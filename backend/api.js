@@ -4,6 +4,7 @@ const cors = require('cors');
 const logRoutes = require('./middleware/logger');
 const userRouter = require('./routers/user');
 const reviewRouter = require("./routers/reviews")
+const bookingRouter = require("./routers/book")
 
 const api = express();
 
@@ -20,6 +21,7 @@ api.get("/", (req, res) => {
 
 api.use("/users", userRouter)
 api.use("/reviews", reviewRouter)
+api.use("/bookings", bookingRouter)
 
 module.exports = api;
 
