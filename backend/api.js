@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors');
 
 const logRoutes = require('./middleware/logger');
+
 const userRouter = require('./routers/user');
+const classesRouter = require ('./routers/classes');
 const reviewRouter = require("./routers/reviews")
 const bookingRouter = require("./routers/book")
 
@@ -12,6 +14,7 @@ api.use(cors());
 api.use(express.json())
 api.use(logRoutes);
 
+
 api.get("/", (req, res) => {
     res.json({
         name: "SQL injectors",
@@ -20,6 +23,7 @@ api.get("/", (req, res) => {
 })
 
 api.use("/users", userRouter)
+api.use("/class", classesRouter)
 api.use("/reviews", reviewRouter)
 api.use("/bookings", bookingRouter)
 

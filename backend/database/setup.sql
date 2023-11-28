@@ -24,6 +24,7 @@ CREATE TABLE token (
 
 CREATE TABLE venue (
     venue_id INT GENERATED ALWAYS AS IDENTITY,
+    class_id INT GENERATED ALWAYS AS IDENTITY,
     venue_name VARCHAR(50) UNIQUE NOT NULL,
     venue_address VARCHAR(100) UNIQUE NOT NULL,
     disabled_access BOOLEAN NOT NULL,

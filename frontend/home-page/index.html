@@ -5,9 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <title>Florin County</title>
 </head>
 <body>
+    <section>
+    <div class="search-container">
+            <label> Search a Class </label>
+    <form>
+        <div class="dropdown">
+            <div id="searchFilter" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+             <div id="list">
+
+              <a href="#about">Pottery</a>
+              <a href="#base">Woodmaking</a>
+              <a href="#blog">Glassmaking</a>
+              <a href="#contact">Potion</a>
+              <a href="#custom">a</a>
+              <a href="#support">d</a>
+              <a href="#tools">e</a>
+            </div>
+        </div>
+          </div>
+     </form>
+    </div>
+    
+   </section>
+        
+   <section>
+    <h1> Select the class that suits your needs</h1>
+<form>
+    <input type="text" name="daterange" value="12/01/2023 - 12/24/2023" />
+        <label for="location">Choose location </label>
+    <select name="location_names" id="location_names">
+        <option value="allLocations">All locations</option>  
+        <option value="FlorinTownhall">Florin Town Hall</option> 
+        <option value="FlorinSecondarySchool">Florin Secondary School</option> 
+        <option value="FlorinCountyLibrary">Florin County Library</option> 
+        <option value="TheCraftsCentre">The Crafts Centre</option> 
+        <option value="FlorinHistoricalCentre">Florin Historical Centre</option> 
+    </select>
+            
+        <button id="filtersButton"> Apply filters</button>
+ </form>  
+ <div id="classContainer" class="class-container"></div>
+    </section>    
+
     
 </body>
 </html>
