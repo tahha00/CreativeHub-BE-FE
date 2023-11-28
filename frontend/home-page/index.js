@@ -33,22 +33,6 @@ function myFunction() {
 
 
 
-
-
-//This code initializes the date range picker using the jQuery library, allowing users to select date ranges.
-$(function() {
-    $('input[name="daterange"]').daterangepicker({
-      opens: 'left'
-    }, function(start, end, label) {
-      console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-    });
-  });
-
-
-
-
-
-
 function fetchClasses(){
     fetch('http://localhost:3000/class')
     .then(resp => resp.json())
