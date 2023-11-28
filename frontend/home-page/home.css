@@ -23,14 +23,23 @@ body{
     color: black;
   }
 
+  .logo-section{
+    height: 30px;
+    position: relative;
+  }
 
   .logo {
-    width: 25%;
-  }
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+
 
 
 .search-section{
     text-align: center;
+    margin-top: 150px;
     margin-bottom: 150px;
     height: 100px;
     display: flex;
@@ -76,29 +85,78 @@ body{
 #list a:hover {
     background-color: #ddd;
 }
-.filterContainer{
+
+#h2filter{
     background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    justify-content:space-evenly;
+    background-color: rgba(255, 255, 255, 0.792);
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
 
 }
-.class-container {
+.filterContainer{
     background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.506);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    justify-content:space-evenly;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+
+    .filterForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filterForm label {
+        font-size: 25px; 
+        margin-bottom: 5px;
+    }
+    
+    .filterForm select {
+        width: 250px; 
+        padding: 8px;
+        font-size: 16px; 
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+    
+    .filterForm button {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 20px;
+    }
+
+
+.class-container {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.506);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
     
 }
 
-.class-card {
+.class-separator {
+    background-color: wheat;
     width: 200px;
-    margin: 20px;
+    margin: 30px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
