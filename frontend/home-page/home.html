@@ -11,9 +11,8 @@
 <body>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
-        <a href="#class">Classes</a>
         <a href="#booking">Bookings</a>
-        <a href="#login">Login</a>
+        <a href="../login-page/login.html">Login</a>
       </div>
     <section class="search-section">
     <div class="search-container">
@@ -36,8 +35,8 @@
      </form>
     </div>
    </section>
-   <section>
-    <h2> Select the class that suits your needs</h2>
+   <h2> Select the class that suits your needs</h2>
+   <section class="filterContainer">
     <form>
         <label for="date">Choose date </label>
     <select name="date_names" id="date_names">
@@ -62,7 +61,7 @@
     </select>
         <button type="button" id="filtersButton"> Apply filters</button>
  </form>
- <div id="classContainer" class="class-container"></div>
     </section>
+<div id="classContainer" class="class-container"></div>
 </body>
 </html>

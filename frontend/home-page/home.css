@@ -21,13 +21,17 @@
 
 .search-section{
     text-align: center;
-    height: 400px;
+    margin-top: 20px; 
+    height: 300px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    width: 100%;
+    background-color: #fff; /* Add a background color */
 }
+
 #searchTitle {
     font-family: 'Roboto', monospace;
     font-size: 25px;
@@ -35,6 +39,7 @@
 }
 
 #myInput{
+    margin-top: 30px;
     width: 300px;
     height: 30px;
     border-radius: 20px;
@@ -43,11 +48,12 @@
 
 #list {
     display:none;
-    
+    position: absolute;
     background-color: #f9f9f9;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 100%; 
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
 }
 
 #list a {
@@ -61,12 +67,19 @@
 #list a:hover {
     background-color: #ddd;
 }
-
+.filterContainer{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content:space-evenly;
+}
 .class-container {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
+    
 }
 
 .class-card {
