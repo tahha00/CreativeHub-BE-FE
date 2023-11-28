@@ -128,7 +128,7 @@ body {
   font-size: 30px;
 }
 
-#typeReview {
+.content {
   margin-top: -40px;
   margin-left: 80px;
   border-radius: 15px;
@@ -153,16 +153,23 @@ body {
 
 }
 
+.review-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  gap: 80px;
+}
 
-.userReviews {
+.review {
     font-family: 'Roboto', monospace;
-    padding: 10px 80px;
-    margin-top: -30px;
-    font-size: 25px;
-    width: 50%;
+    font-size: 15px;
+    width: 8%;
     color: black;
-    margin: 8%;
-    margin-left: 0%;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    padding-left: 80px;
+    scroll-snap-align: start;
 }
 
 .submitReviewTitle {
@@ -171,6 +178,19 @@ body {
   padding: 10px 80px;
   font-size: 20px;
   margin-top: 50px;
+  margin-left: -80px;
 }
 
+.slider-container {
+  display: flex;
+  width: 80%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.submitReviewSection {
+  padding-top: 30px;
+  margin-left: 80px;
+}
  

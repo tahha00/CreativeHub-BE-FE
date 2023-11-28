@@ -36,12 +36,12 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         })
     }
 
-    const response = await fetch("https://sql-injectors.onrender.com/users/login", options);
+    const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
 
     if (response.status == 200) {
         localStorage.setItem("token", data.token);
-        window.location.assign("../class-page/class.html");
+        window.location.assign("../class-page/jewelleryMakingClass.html");
     } else {
         loginerror.textContent = `${data.error}`
         console.log(data.error);
@@ -58,8 +58,9 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     const options = {
         method: "POST",
         headers: {
+            authorization: localStorage.getItem("token"),
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             username: form.get("username"),
@@ -67,7 +68,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         })
     }
 
-    const response = await fetch("https://sql-injectors.onrender.com/users/register", options);
+    const response = await fetch("http://localhost:3000/users/register", options);
     const data = await response.json();
 
     if (response.status == 201) {
