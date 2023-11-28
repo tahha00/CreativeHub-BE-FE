@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="home.js"></script>
     <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto&display=swap" rel="stylesheet">
     <title>Florin County</title>
 </head>
 <body>
@@ -12,11 +13,11 @@
         <a class="active" href="#home">Home</a>
         <a href="#class">Classes</a>
         <a href="#booking">Bookings</a>
-        <a href="#logout">Logout</a>
+        <a href="#login">Login</a>
       </div>
-    <section>
+    <section class="search-section">
     <div class="search-container">
-            <label> Search a Class </label>
+            <label id="searchTitle"> Search a Class </label>
     <form>
         <div class="dropdown">
             <div id="searchFilter" class="dropdown-content">
@@ -36,7 +37,7 @@
     </div>
    </section>
    <section>
-    <h1> Select the class that suits your needs</h1>
+    <h2> Select the class that suits your needs</h2>
     <form>
         <label for="date">Choose date </label>
     <select name="date_names" id="date_names">
