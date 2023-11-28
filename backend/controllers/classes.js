@@ -33,6 +33,17 @@ async function filterItems(req, res) {
     }
   }
 
+  async function dateFilter(req,res){
+    let date = req.params.date
+    console.log(date)
+    try {
+        const filteredItems = await Class.getItemByDate(date);
+        res.status(200).json(filteredItems);
+      } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+  }
 
 
-module.exports = {index, filterItems, show}
+
+module.exports = {index, filterItems, show, dateFilter}
