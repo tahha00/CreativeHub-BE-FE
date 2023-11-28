@@ -49,7 +49,7 @@ $(function() {
 
 
 
-function fetchClasses (){
+function fetchClasses(){
     fetch('http://localhost:3000/class')
     .then(resp => resp.json())
     .then(data => displayClasses(data))
@@ -76,22 +76,47 @@ classContainer.appendChild(classElement);
 
 //calendar and location filters 
 
-function applyFilters(event){
-    event.preventDefault(); 
+function applyFilters(){
     const dateRange = document.querySelector('input[name="daterange"]').value;
     const location = document.querySelector('#location_names').value;
-
-   
-
-   
+    console.log("Date Range:", dateRange);
+    console.log("Location:", location);
 }
 
+function fetchFilteredData() {
+    const location = document.querySelector('#location_names').value;
 
+    const number = parseInt(location)
 
+  fetch(`http://localhost:3000/class/filter/${number}`)
+    .then(response => response.json())
+    .then(data => {
+      displayClasses(data)
+      // Handle the fetched data in the frontend
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+function fetchDateFilter() {
+  const date = document.querySelector('#date_names').value;
+  console.log(date)
+fetch(`http://localhost:3000/class/filter/${date}`)
+  .then(response => response.json())
+  .then(data => {
+    displayClasses(data)
+    // Handle the fetched data in the frontend
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
 
 const showDropdown = document.querySelector("#myInput")
 showDropdown.addEventListener("click", myFunction);
 
 document.addEventListener('DOMContentLoaded', fetchClasses)
 
-filtersButton.addEventListener('click', applyFilters)
+filtersButton.addEventListener('click', fetchFilteredData)
+filtersButton.addEventListener('click', fetchDateFilter)
