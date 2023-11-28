@@ -34,6 +34,7 @@ async function filterItems(req, res) {
   }
 
   async function dateFilter(req,res){
+    
     let date = req.params.date
     console.log(date)
     try {

@@ -76,13 +76,6 @@ classContainer.appendChild(classElement);
 
 //calendar and location filters 
 
-function applyFilters(){
-    const dateRange = document.querySelector('input[name="daterange"]').value;
-    const location = document.querySelector('#location_names').value;
-    console.log("Date Range:", dateRange);
-    console.log("Location:", location);
-}
-
 function fetchFilteredData() {
     const location = document.querySelector('#location_names').value;
 
@@ -102,7 +95,9 @@ function fetchFilteredData() {
 function fetchDateFilter() {
   const date = document.querySelector('#date_names').value;
   console.log(date)
-fetch(`http://localhost:3000/class/filter/${date}`)
+  const encodedDate = encodeURIComponent(date);
+
+fetch(`http://localhost:3000/class/filter/date/${encodedDate}`)
   .then(response => response.json())
   .then(data => {
     displayClasses(data)
@@ -119,4 +114,4 @@ showDropdown.addEventListener("click", myFunction);
 document.addEventListener('DOMContentLoaded', fetchClasses)
 
 filtersButton.addEventListener('click', fetchFilteredData)
-filtersButton.addEventListener('click', fetchDateFilter)
+dateButton.addEventListener('click', fetchDateFilter)
