@@ -1,11 +1,11 @@
 const db = require("../database/connect")
 
 class Review {
-    constructor({ review_id, class_id, review_text, user_id}){
+    constructor({ review_id, review_text }){
         this.id = review_id;
-        this.class_id = class_id;
+        // this.class_id = class_id;
         this.review_text = review_text;
-        this.user_id = user_id
+        // this.user_id = user_id
     }
 
     static async getAll(){
@@ -26,7 +26,7 @@ class Review {
 
     static async create(data){
         const { review_text } = data;
-        let response = await db.query("INSERT INTO review (review_text) VALUES ($1)", [review_text])
+        let response = await db.query("INSERT INTO review (review_text) VALUES ($1) RETURNING review_id;", [review_text])
         const reviewId = response.rows[0].review_id;
         const newReview = await Review.getOneById(reviewId)
         return newReview
