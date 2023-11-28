@@ -22,6 +22,11 @@ class Class {
         return new Class(response.rows[0])
     }
 
+    static async getOneByName(name){
+        const response = await db.query("SELECT class_id FROM class WHERE class_name LIKE '%$1%'; ", [name]) 
+        return new Class(response.rows[0])
+    }
+
     static async getItemsByFilters(id) {
 
           const query = await db.query('SELECT class.class_name, venue.venue_name, review.score_out_of_five, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.venue_id=$1', [id]);
