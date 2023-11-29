@@ -59,10 +59,12 @@ classContainer.appendChild(classElement);
 
 function fetchFilteredData() {
     const location = document.querySelector('#location_names').value;
+    const date = document.querySelector('#date_names').value;
 
     const number = parseInt(location)
+    const encodedDate = encodeURIComponent(date);
 
-  fetch(`http://localhost:3000/class/filter/${number}`)
+  fetch(`http://localhost:3000/class/filter/${number}/${encodedDate}`)
     .then(response => response.json())
     .then(data => {
       displayClasses(data)
@@ -73,21 +75,21 @@ function fetchFilteredData() {
     });
 }
 
-function fetchDateFilter() {
-  const date = document.querySelector('#date_names').value;
-  console.log(date)
-  const encodedDate = encodeURIComponent(date);
+// function fetchDateFilter() {
+//   const date = document.querySelector('#date_names').value;
+//   console.log(date)
+//   const encodedDate = encodeURIComponent(date);
 
-fetch(`http://localhost:3000/class/filter/date/${encodedDate}`)
-  .then(response => response.json())
-  .then(data => {
-    displayClasses(data)
-    // Handle the fetched data in the frontend
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-}
+// fetch(`http://localhost:3000/class/filter/date/${encodedDate}`)
+//   .then(response => response.json())
+//   .then(data => {
+//     displayClasses(data)
+//     // Handle the fetched data in the frontend
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
+// }
 
 const showDropdown = document.querySelector("#myInput")
 showDropdown.addEventListener("click", myFunction);
@@ -95,4 +97,3 @@ showDropdown.addEventListener("click", myFunction);
 document.addEventListener('DOMContentLoaded', fetchClasses)
 
 filtersButton.addEventListener('click', fetchFilteredData)
-dateButton.addEventListener('click', fetchDateFilter)
