@@ -57,9 +57,6 @@ classContainer.appendChild(classElement);
   });
 }
 
-
-//calendar and location filters 
-
 function fetchFilteredData() {
     const location = document.querySelector('#location_names').value;
 
