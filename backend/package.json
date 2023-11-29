@@ -15,7 +15,7 @@
   "jest": {
     "testPathIgnorePatterns": [
       "./testing/client_testing/helper.js",
-      "./testing/client_testing/layout.spec.js"
+      "./testing/client_testing/class.spec.js"
     ]
   },
   "keywords": [],
@@ -26,6 +26,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "jest-fetch-mock": "^3.0.3",
     "pg": "^8.11.3",
     "uuid": "^9.0.1"
   },

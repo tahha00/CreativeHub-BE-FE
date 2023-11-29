@@ -16,10 +16,9 @@ global.fetch = jest.fn(() => Promise.resolve({
     })
   }))
 
-describe('home.html', () => {
+describe('home.html',() => {
     beforeEach(() => {
       document.documentElement.innerHTML = html.toString();
-
     })
   
     afterEach(() => {
@@ -30,9 +29,5 @@ it('fetch is called when fetchClasses is invoked', async () => {
     await classes.fetchClasses()
     expect(fetch).toHaveBeenCalledTimes(1)
 })
-
-
-
-
 
 })
