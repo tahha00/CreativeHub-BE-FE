@@ -75,22 +75,6 @@ function fetchFilteredData() {
     });
 }
 
-// function fetchDateFilter() {
-//   const date = document.querySelector('#date_names').value;
-//   console.log(date)
-//   const encodedDate = encodeURIComponent(date);
-
-// fetch(`http://localhost:3000/class/filter/date/${encodedDate}`)
-//   .then(response => response.json())
-//   .then(data => {
-//     displayClasses(data)
-//     // Handle the fetched data in the frontend
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
-// }
-
 const showDropdown = document.querySelector("#myInput")
 showDropdown.addEventListener("click", myFunction);
 
