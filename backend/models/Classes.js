@@ -12,14 +12,18 @@ class Class {
 
 
     static async showAll(){
-        const response = await db.query('SELECT class.class_name, venue.venue_name,class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id)')
+        const response = await db.query('SELECT class.class_id, class.class_name, venue.venue_name,class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id)')
         return response.rows.map(p => new Class(p))
     } 
 
     static async getOneById(id){
-        const response = await db.query('SELECT class.class_name, venue.venue_name, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.class_id=$1', [id])
+        console.log("hello")
+        const response = await db.query('SELECT class.class_id, class.class_name, venue.venue_name, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.class_id=$1;', [id]) 
+
+        console.log(response)
 
         return new Class(response.rows[0])
+      
     }
 
     static async getOneByName(name){
@@ -29,7 +33,7 @@ class Class {
 
     static async getItemsByFilters(id, date) {
 
-          const query = await db.query('SELECT class.class_name, venue.venue_name, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.venue_id=$1 AND class.class_date=$2', [id, date]);
+          const query = await db.query('SELECT class.class_name, venue.venue_name, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.venue_id=$1 AND class.class_date=$2', [id, date]);
         
           return query.rows.map(p => new Class(p))
       }

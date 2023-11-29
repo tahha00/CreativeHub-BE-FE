@@ -49,20 +49,19 @@ CREATE TABLE class (
 
 CREATE TABLE review (
     review_id INT GENERATED ALWAYS AS IDENTITY,
-    class_id INT NOT NULL,
+    -- class_id INT NOT NULL,
     review_text VARCHAR(300) NOT NULL, 
-    user_id INT NOT NULL, 
-    PRIMARY KEY (review_id),
-    FOREIGN KEY (class_id) REFERENCES class("class_id"),
-    FOREIGN KEY (user_id) REFERENCES user_account("user_id")
+    --user_id INT NOT NULL, 
+    PRIMARY KEY (review_id)
+    --FOREIGN KEY (class_id) REFERENCES class("class_id"),
+    --FOREIGN KEY (user_id) REFERENCES user_account("user_id")
 );
 
 CREATE TABLE booking (
     booking_id INT GENERATED ALWAYS AS IDENTITY,
     class_id INT NOT NULL, 
     user_id INT NOT NULL, 
-    class_date VARCHAR(50), 
-    class_start TIME NOT NULL,
+    class_time VARCHAR(50), 
     PRIMARY KEY (booking_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id"),
     FOREIGN KEY (user_id) REFERENCES user_account("user_id")

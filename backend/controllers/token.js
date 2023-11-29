@@ -5,6 +5,7 @@ async function show(req,res){
         const token = req.params.token
         const response = await Token.getOneByToken(token)
         const user = response.user_id;
+        console.log(`the user id is ${user}`)
         res.status(200).json(user);
 
     }

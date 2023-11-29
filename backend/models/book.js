@@ -1,12 +1,11 @@
 const db = require('../database/connect');
 
 class Book {
-    constructor({ booking_id, class_id, user_id, class_date, class_start}) {
+    constructor({ booking_id, class_id, user_id, class_time}) {
         this.id = booking_id;
         this.classid = class_id;
         this.userid = user_id;
-        this.classdate = class_date;
-        this.classstart = class_start;
+        this.classtime = class_time; 
     }
 
     static async getAll() {
@@ -23,8 +22,8 @@ class Book {
     }
 
     static async create(data) {
-        const { class_id, user_id, class_date, class_start } = data;
-        let response = await db.query("INSERT INTO booking (class_id, user_id, class_date, class_start) VALUES ($1, $2, $3, $4);", [class_id, user_id, class_date, class_start])
+        const { class_id, user_id, class_time } = data;
+        let response = await db.query("INSERT INTO booking (class_id, user_id, class_time) VALUES ($1, $2, $3);", [class_id, user_id, class_time])
         const bookingId = response.rows[0].booking_id;
         const newBook = await Book.getOneById(bookingId)
         return newBook
