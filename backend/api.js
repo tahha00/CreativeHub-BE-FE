@@ -7,6 +7,7 @@ const userRouter = require('./routers/user');
 const classesRouter = require ('./routers/classes');
 const reviewRouter = require("./routers/reviews")
 const bookingRouter = require("./routers/book")
+const tokenRouter = require("./routers/token")
 
 const api = express();
 
@@ -26,6 +27,7 @@ api.use("/users", userRouter)
 api.use("/class", classesRouter)
 api.use("/reviews", reviewRouter)
 api.use("/bookings", bookingRouter)
+api.use("/tokens", tokenRouter)
 
 module.exports = api;
 

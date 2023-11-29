@@ -2,7 +2,8 @@ const db= require('../database/connect')
 
 
 class Class {
-    constructor({class_name, venue_name, photo_url, class_date}){
+    constructor({ class_id, class_name, venue_name, photo_url, class_date}){
+        this.id=class_id;
         this.name=class_name;
         this.venue=venue_name;
         this.photo=photo_url;
@@ -22,7 +23,7 @@ class Class {
     }
 
     static async getOneByName(name){
-        const response = await db.query("SELECT class_id FROM class WHERE class_name LIKE '%$1%'; ", [name]) 
+        const response = await db.query("SELECT class_id, class_name, class_date, start_time, finish_time FROM class WHERE class_name LIKE $1;", [`%${name}%`]) 
         return new Class(response.rows[0])
     }
 
