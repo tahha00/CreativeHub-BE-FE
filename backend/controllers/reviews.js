@@ -22,8 +22,8 @@ const show = async (req, res) => {
 const create = async (req, res) => {
   try {
     const data = req.body;
-    const resolved = await Review.create(data);
-    res.status(201).send(resolved);
+    const result = await Review.create(data);
+    res.status(201).send(result);
   } catch (err) {
     res.status(400).send({ "error": err.message });
   }
