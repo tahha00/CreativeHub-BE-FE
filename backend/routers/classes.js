@@ -6,8 +6,8 @@ const classesController = require ("../controllers/classes")
 
 classesRouter.get("/", classesController.index);
 classesRouter.get("/:id", classesController.show)
-classesRouter.get("/filter/:id", classesController.filterItems)
-classesRouter.get("/filter/date/:date", classesController.dateFilter)
+classesRouter.get("/filter/:id/:date", classesController.filterItems)
+// classesRouter.get("/filter/date/:date", classesController.dateFilter)
 
 
 module.exports = classesRouter;

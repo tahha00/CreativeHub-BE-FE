@@ -22,18 +22,18 @@ class Class {
         return new Class(response.rows[0])
     }
 
-    static async getItemsByFilters(id) {
+    static async getItemsByFilters(id, date) {
 
-          const query = await db.query('SELECT class.class_name, venue.venue_name, review.score_out_of_five, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.venue_id=$1', [id]);
+          const query = await db.query('SELECT class.class_name, venue.venue_name, review.score_out_of_five, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.venue_id=$1 AND class.class_date=$2', [id, date]);
         
           return query.rows.map(p => new Class(p))
       }
 
-      static async getItemByDate(date){
-        const response = await db.query('SELECT class.class_name, venue.venue_name, review.score_out_of_five, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.class_date=$1', [date])
+    //   static async getItemByDate(date){
+    //     const response = await db.query('SELECT class.class_name, venue.venue_name, review.score_out_of_five, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN review ON (class.class_id = review.class_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id) WHERE class.class_date=$1', [date])
 
-        return response.rows.map(p => new Class(p))
-      }
+    //     return response.rows.map(p => new Class(p))
+    //   }
     
 }
 
