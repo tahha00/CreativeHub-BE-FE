@@ -52,7 +52,7 @@ CREATE TABLE review (
     class_id INT NOT NULL,
     review_text VARCHAR(300) NOT NULL, 
     user_id INT NOT NULL, 
-    PRIMARY KEY (review_id)
+    PRIMARY KEY (review_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id"),
     FOREIGN KEY (user_id) REFERENCES user_account("user_id")
 );

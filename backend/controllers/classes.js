@@ -24,7 +24,7 @@ async function filterItems(req, res) {
     let date = req.params.date
     venueId = parseInt(venueId)
     console.log(venueId)
-  
+    console.log(date)
     try {
       const filteredItems = await Class.getItemsByFilters(venueId, date);
       res.status(200).json(filteredItems);
