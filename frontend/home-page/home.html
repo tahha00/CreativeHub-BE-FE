@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="home.js"></script>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto&display=swap" rel="stylesheet">
+    <title>Florin County</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="./home.html">Home</a>
+        <a href="../login-page/login.html">Login</a>
+      </div>
+      <div class = "logo-section">
+        <img class = "logo" src="./img/Craft-removebg-preview.png" alt="Craft Hub Logo">
+      </div>
+    <section class="search-section">
+    <div class="search-container">
+            <label id="searchTitle"> Search a Class </label>
+    <form>
+        <div class="dropdown">
+            <div id="searchFilter" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+             <div id="list">
+              <a href="../class-page/potteryClass.html">Pottery</a>
+              <a href="../class-page/woodworkClass.html">Woodmaking</a>
+              <a href="../class-page/jewelerryMakingClass.html">Glassmaking</a>
+            </div>
+        </div>
+          </div>
+     </form>
+    </div>
+   </section>
+   <h2 id="h2filter"> Select the class that suits your needs</h2>
+   <section class="filterContainer">
+    <form class="filterForm">
+        <label for="date">Choose date </label>
+    <select name="date_names" id="date_names">
+        <option value="Every_Monday">Every Monday</option>
+        <option value="Every_Tuesday">Every Tuesday</option>
+        <option value="Every_Wednesday">Every Wednesday</option>
+        <option value="Every_Thursday">Every Thursday</option>
+        <option value="Every_Friday">Every Friday</option>
+        <option value="Every_Saturday">Every Saturday</option>
+    </select>
+ </form>
+<form class="filterForm">
+        <label for="location">Choose location </label>
+    <select name="location_names" id="location_names">
+        <option value="all Locations">All locations</option>
+        <option value="1">Florin Town Hall</option>
+        <option value="2">Florin Secondary School</option>
+        <option value="3">Florin County Library</option>
+        <option value="4">The Crafts Centre</option>
+        <option value="5">Florin Historical Centre</option>
+    </select>
+        <button type="button" id="filtersButton"> Apply filters</button>
+ </form>
+    </section>
+<div id="classContainer" class="class-container"></div>
+</body>
+</html>
