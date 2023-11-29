@@ -12,7 +12,8 @@ const show = async (req, res) => {
 
   const destroy = async (req, res) => {
     try {
-        const bookingId = parseInt(req.params.id);
+      
+        const bookingId = parseInt(req.params.bookingId);
         const booking = await Bookings.getOneById(bookingId);
 
         if (!booking) {
@@ -22,7 +23,9 @@ const show = async (req, res) => {
         const removed = await booking.destroy();
 
         res.status(204).end();
+        
     } catch (err) {
+      console.log("hit destroy")
         res.status(404).send({ "error": err.message });
     }
 };

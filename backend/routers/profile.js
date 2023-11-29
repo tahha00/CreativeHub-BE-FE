@@ -7,6 +7,6 @@ const authenticator = require("../middleware/authenticator")
 const profileRouter = Router();
 
 profileRouter.get("/:id", profileController.show)
-profileRouter.delete("/:id", profileController.destroy)
+profileRouter.delete("/bookings/:bookingId", profileController.destroy)
 
 module.exports = profileRouter; 
