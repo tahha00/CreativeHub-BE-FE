@@ -39,7 +39,7 @@ CREATE TABLE class (
     finish_time TIME NOT NULL, 
     price FLOAT NOT NULL, 
     over18 BOOLEAN DEFAULT FALSE,
-    class_date DATE NOT NULL, 
+    class_date VARCHAR(50), 
     difficulty VARCHAR(20) NOT NULL, 
     contact_phone BIGINT NOT NULL, 
     contact_email VARCHAR(50),
@@ -61,7 +61,7 @@ CREATE TABLE booking (
     booking_id INT GENERATED ALWAYS AS IDENTITY,
     class_id INT NOT NULL, 
     user_id INT NOT NULL, 
-    class_date DATE NOT NULL, 
+    class_date VARCHAR(50), 
     class_start TIME NOT NULL,
     PRIMARY KEY (booking_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id"),
@@ -88,10 +88,10 @@ INSERT INTO class (
     class_name, venue_id, start_time, finish_time, price, over18, class_date, difficulty, contact_phone, contact_email
 )
 VALUES 
-    ('Introduction to Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-12', 'Beginner', 47586747495, 'thomas@florincrafts.co.uk'),
-    ('Intermediate Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-14', 'Intermediate', 47586747495, 'thomas@florincrafts.co.uk'),
-    ('Advanced Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-16', 'Advanced', 47586747495, 'thomas@florincrafts.co.uk'),
-    ('Introduction to Glass Blowing', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-13', 'Beginner', 47586747495, 'claire@florincrafts.co.uk'),
-    ('History of Florin', 5, '18:00:00', '20:00:00', 5, FALSE, '2023-12-15', 'Beginner', 47586747495, 'steve@florinhistory.co.uk'),
-    ('Introduction to Crocheting', 1, '10:00:00', '12:00:00', 5, FALSE, '2023-12-18', 'Beginner', 47586747495, 'maurine@florincrafts.co.uk'),
-    ('Perfect Recycling Practices', 3, '18:00:00', '19:00:00', 5, FALSE, '2023-12-19', 'Beginner', 47586747495, 'lucy@florincountycouncil.co.uk');
+    ('Introduction to Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, 'Every_Monday', 'Beginner', 47586747495, 'thomas@florincrafts.co.uk'),
+    ('Intermediate Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, 'Every_Tuesday', 'Intermediate', 47586747495, 'thomas@florincrafts.co.uk'),
+    ('Advanced Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, 'Every_Friday', 'Advanced', 47586747495, 'thomas@florincrafts.co.uk'),
+    ('Introduction to Glass Blowing', 4, '18:00:00', '20:00:00', 5, TRUE, 'Every_Tuesday', 'Beginner', 47586747495, 'claire@florincrafts.co.uk'),
+    ('History of Florin', 5, '18:00:00', '20:00:00', 5, FALSE, 'Every_Saturday', 'Beginner', 47586747495, 'steve@florinhistory.co.uk'),
+    ('Introduction to Crocheting', 1, '10:00:00', '12:00:00', 5, FALSE, 'Every_Monday', 'Beginner', 47586747495, 'maurine@florincrafts.co.uk'),
+    ('Perfect Recycling Practices', 3, '18:00:00', '19:00:00', 5, FALSE, 'Every_Tuesday', 'Beginner', 47586747495, 'lucy@florincountycouncil.co.uk');
