@@ -75,11 +75,8 @@ loadReviews()
 
 //!BOOKING
 
-const className = document.getElementsByClassName("title").textContent
 
-
-async function extractClassId(className){
-    
+async function getUserId(token){
     const options = {
         method: 'GET',
         headers: {
@@ -87,21 +84,50 @@ async function extractClassId(className){
             'Content-Type': 'application/json'
         }
     };
-        const response = await fetch(`http://localhost:3000/classes/$1{className}`, options);
 
-        if (response.status === 201) {
-            alert("Class ID Found!");
-        } else {
-            alert("Could not extract class_id");
-        }   
+    const response = await fetch(`http://localhost:3000/tokens/${token}`, options)
+
+    if (response.status === 200){
+        console.log("id extracted")
+        console.log(response)
+    }
+    else {
+        console.log("could not find a valid token")
+    }
+
+   
+}
+const token = localStorage.getItem("token")
+//getUserId(token);
+
+const userID = getUserId(token)
+
+
+async function classId(id) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    };
+
+    const response = await fetch(`http://localhost:3000/class/${id}`, options)
+
+    if (response.status === 200) {
+        console.log("class ID extracted")
+    } else {
+        console.log("invalid class id")
+    }
+    
 }
 
-
-
-const classID = extractClassId(className)
+//let classid = classId(id)
+console.log(userID)
 
 
 async function makeBooking(){
+
 
     const options = {
         method: 'POST',
@@ -110,13 +136,11 @@ async function makeBooking(){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            class_id: classID
-            // user_id: ,
-            // class_date: ,
-            // class_start: ,
-
+            user_id: userID,
+            class_id: 3
         })
     }
+     console.log(options)
 
         const response = await fetch("http://localhost:3000/bookings", options);
 
@@ -128,7 +152,22 @@ async function makeBooking(){
     
 }
 
-document.querySelector(".bookBtn").addEventListener("click", makeBooking)
+
+
+const submitData = document.querySelector(".bookBtn")
+
+submitData.addEventListener("click", makeBooking)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
