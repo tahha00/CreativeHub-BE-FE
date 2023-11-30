@@ -1,0 +1,81 @@
+body{
+    background-image: url('../home-page/img/brown\ bakcground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.topnav {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .logo-section{
+    height: 30px;
+    position: relative;
+  }
+
+  .logo {
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+
+#table-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+
+.table-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2#h2filter {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}

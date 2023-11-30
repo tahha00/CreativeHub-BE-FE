@@ -43,7 +43,7 @@ body {
 
   .title {
     font-family: 'Heebo', monospace;
-    color: black;
+    color: rgb(63, 26, 26);
     padding: 10px 80px;
     margin-top: -30px;
     font-size: 50px;
@@ -56,6 +56,7 @@ body {
     font-size: 25px;
     width: 50%;
     color: black;
+    line-height: 2;
   }
 
   .teacher {
@@ -79,7 +80,7 @@ body {
     align-items: center;
     position: absolute;
     top: 300px;
-    height: 400px;
+    height: 550px;
     width: 300px;
     border-radius: 30px;
     border: 3px solid black;
@@ -128,7 +129,7 @@ body {
   font-size: 30px;
 }
 
-#typeReview {
+.content {
   margin-top: -40px;
   margin-left: 80px;
   border-radius: 15px;
@@ -143,26 +144,60 @@ body {
   font-size: 30px;
 }
 
+
+.submitReviewSection{
+  background-color: rgb(206, 162, 162);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+
+}
+
+
+#review-form{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  background-color: black;
+  width: 80%; 
+  margin: auto; 
+  flex-direction: column;
+  align-items: center; 
+}
+
 #submitReviewBtn {
   border-radius: 10px;
   border: 3px solid black;
   background-color: rgb(210, 210, 210);
   color: black;
   height: 50px;
-  width: 80px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 50%;
 
 }
 
 
-.userReviews {
+.review-container {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+  margin-bottom: 15px;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.review {
     font-family: 'Roboto', monospace;
-    padding: 10px 80px;
-    margin-top: -30px;
-    font-size: 25px;
-    width: 50%;
+    font-size: 15px;
+    width: 8%;
     color: black;
-    margin: 8%;
-    margin-left: 0%;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    padding-left: 80px;
+    scroll-snap-align: start;
 }
 
 .submitReviewTitle {
@@ -171,6 +206,45 @@ body {
   padding: 10px 80px;
   font-size: 20px;
   margin-top: 50px;
+  margin-left: -80px;
 }
 
+.slider-container {
+  display: flex;
+  width: 80%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.submitReviewSection {
+  padding-top: 30px;
+  margin-left: 80px;
+}
  
+#date_and_time {
+  display: none;
+}
+
+#date_and_time.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.dateBtn {
+  cursor: pointer;
+}
+
+.bookBtn {
+  cursor: pointer;
+}

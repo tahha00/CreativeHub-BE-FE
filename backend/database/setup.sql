@@ -24,6 +24,7 @@ CREATE TABLE token (
 
 CREATE TABLE venue (
     venue_id INT GENERATED ALWAYS AS IDENTITY,
+    class_id INT GENERATED ALWAYS AS IDENTITY,
     venue_name VARCHAR(50) UNIQUE NOT NULL,
     venue_address VARCHAR(100) UNIQUE NOT NULL,
     disabled_access BOOLEAN NOT NULL,
@@ -38,8 +39,8 @@ CREATE TABLE class (
     finish_time TIME NOT NULL, 
     price FLOAT NOT NULL, 
     over18 BOOLEAN DEFAULT FALSE,
-    class_date DATE NOT NULL, 
-    difficulty VARCHAR(20) NOT NULL, 
+    class_date VARCHAR(50),
+    teacher VARCHAR(50),
     contact_phone BIGINT NOT NULL, 
     contact_email VARCHAR(50),
     PRIMARY KEY (class_id),
@@ -48,20 +49,17 @@ CREATE TABLE class (
 
 CREATE TABLE review (
     review_id INT GENERATED ALWAYS AS IDENTITY,
-    --class_id INT NOT NULL,
     review_text VARCHAR(300) NOT NULL, 
-    --user_id INT NOT NULL, 
     PRIMARY KEY (review_id)
-    --FOREIGN KEY (class_id) REFERENCES class("class_id"),
-    --FOREIGN KEY (user_id) REFERENCES user_account("user_id")
+   
 );
 
 CREATE TABLE booking (
     booking_id INT GENERATED ALWAYS AS IDENTITY,
     class_id INT NOT NULL, 
     user_id INT NOT NULL, 
-    class_date DATE NOT NULL, 
-    class_start TIME NOT NULL,
+    class_time VARCHAR(50), 
+    class_start VARCHAR(50),
     PRIMARY KEY (booking_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id"),
     FOREIGN KEY (user_id) REFERENCES user_account("user_id")
@@ -69,7 +67,7 @@ CREATE TABLE booking (
 
 CREATE TABLE class_photo (
     photo_id INT GENERATED ALWAYS AS IDENTITY,
-    photo_url VARCHAR(100),
+    photo_url VARCHAR(1000),
     class_id INT NOT NULL, 
     PRIMARY KEY (photo_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id")
@@ -84,13 +82,19 @@ VALUES
     ('Florin Historical Centre', 'Florin Historical Centre, Old lane, The Wilderness, FL66 VOS', FALSE);
 
 INSERT INTO class (
-    class_name, venue_id, start_time, finish_time, price, over18, class_date, difficulty, contact_phone, contact_email
+    class_name, venue_id, start_time, finish_time, price, over18, class_date, teacher, contact_phone, contact_email
 )
 VALUES 
-    ('Introduction to Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-12', 'Beginner', 47586747495, 'thomas@florincrafts.co.uk'),
-    ('Intermediate Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-14', 'Intermediate', 47586747495, 'thomas@florincrafts.co.uk'),
-    ('Advanced Pottery', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-16', 'Advanced', 47586747495, 'thomas@florincrafts.co.uk'),
-    ('Introduction to Glass Blowing', 4, '18:00:00', '20:00:00', 5, TRUE, '2023-12-13', 'Beginner', 47586747495, 'claire@florincrafts.co.uk'),
-    ('History of Florin', 5, '18:00:00', '20:00:00', 5, FALSE, '2023-12-15', 'Beginner', 47586747495, 'steve@florinhistory.co.uk'),
-    ('Introduction to Crocheting', 1, '10:00:00', '12:00:00', 5, FALSE, '2023-12-18', 'Beginner', 47586747495, 'maurine@florincrafts.co.uk'),
-    ('Perfect Recycling Practices', 3, '18:00:00', '19:00:00', 5, FALSE, '2023-12-19', 'Beginner', 47586747495, 'lucy@florincountycouncil.co.uk');
+    ('Pottery Mondays', 1, '18:00:00', '20:00:00', 5, FALSE, 'Every_Monday', 'Steve', 47586747495, 'steve@florincrafts.com'),
+    ('Jewellery Tuesdays', 2, '18:00:00', '20:00:00', 5, FALSE, 'Every_Tuesday', 'Karina', 47586747495, 'karina@florincrafts.com'),
+    ('Woodwork Wednesdays', 3, '18:00:00', '20:00:00', 5, FALSE, 'Every_Wednesday', 'Karina', 47586747495, 'karina@florincrafts.com');
+
+
+
+
+INSERT INTO class_photo ( photo_url, class_id)
+VALUES
+('https://images.unsplash.com/photo-1620140036708-455ed5c0426a?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 1),
+('https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=1587&auto=format&f[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 2),
+('https://images.unsplash.com/photo-1607201076154-6f8b247ed4d2?q=80&w=1589&auto=format&f[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 3);
+

@@ -41,7 +41,8 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     if (response.status == 200) {
         localStorage.setItem("token", data.token);
-        window.location.assign("../class-page/class.html");
+        window.history.back()
+        //window.location.assign("../profile-page/profile.html");
     } else {
         loginerror.textContent = `${data.error}`
         console.log(data.error);
@@ -58,8 +59,9 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     const options = {
         method: "POST",
         headers: {
+            authorization: localStorage.getItem("token"),
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             username: form.get("username"),
