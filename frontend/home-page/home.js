@@ -46,7 +46,7 @@ function displayClasses (data) {
  data.forEach(cls => {
     const classElement = document.createElement('div');
     classElement.innerHTML = `
-    <img src="${cls.photo}" alt="Class Photo">
+    <img src="${cls.photo}" alt="Class Photo" class="class-photo">
     <h2>${cls.name}</h2>
     <p>Venue: ${cls.venue}</p>
     <p>Review: ${cls.review}</p>

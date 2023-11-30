@@ -62,6 +62,7 @@ CREATE TABLE booking (
     class_id INT NOT NULL, 
     user_id INT NOT NULL, 
     class_time VARCHAR(50), 
+    class_start VARCHAR(50),
     PRIMARY KEY (booking_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id"),
     FOREIGN KEY (user_id) REFERENCES user_account("user_id")
@@ -69,7 +70,7 @@ CREATE TABLE booking (
 
 CREATE TABLE class_photo (
     photo_id INT GENERATED ALWAYS AS IDENTITY,
-    photo_url VARCHAR(100),
+    photo_url VARCHAR(1000),
     class_id INT NOT NULL, 
     PRIMARY KEY (photo_id),
     FOREIGN KEY (class_id) REFERENCES class("class_id")
@@ -96,10 +97,23 @@ VALUES
     ('Perfect Recycling Practices', 3, '18:00:00', '19:00:00', 5, FALSE, 'Every_Tuesday', 'Beginner', 47586747495, 'lucy@florincountycouncil.co.uk');
 
 
+
+
+INSERT INTO class_photo ( photo_url, class_id)
+VALUES
+('https://images.unsplash.com/photo-1589051088132-06f36a22012a?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 1),
+('https://images.unsplash.com/photo-1620140036708-455ed5c0426a?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 2),
+('https://images.unsplash.com/photo-1592908514941-75fe043d8140?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 5),
+('https://images.unsplash.com/photo-1605735940798-5201db29e5e9?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 6),
+('https://images.unsplash.com/photo-1625765361596-d425d3c3eb96?q=80&w=1595&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 4),
+('https://images.unsplash.com/photo-1607448885122-b3d4cf451587?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 3),
+('https://images.unsplash.com/photo-1525695230005-efd074980869?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 7);
+
+
 INSERT INTO user_account (username, password) 
 VALUES ('Ale', 'fines');
 
-INSERT INTO booking (class_id, user_id, class_date, class_start)
+INSERT INTO booking (class_id, user_id, class_time, class_start)
 VALUES
 (1, 1, '2023-12-01', '18:00:00'),
 (2, 1, '2023-12-02', '19:00:00');
