@@ -74,10 +74,13 @@ function fetchFilteredData() {
       console.error('Error:', error);
     });
 }
+document.addEventListener('DOMContentLoaded', fetchClasses)
+const filtersButton = document.querySelector("#filtersButton")
+filtersButton.addEventListener('click', fetchFilteredData)
 
 const showDropdown = document.querySelector("#myInput")
 showDropdown.addEventListener("click", myFunction);
 
-document.addEventListener('DOMContentLoaded', fetchClasses)
 
-filtersButton.addEventListener('click', fetchFilteredData)
+
+
