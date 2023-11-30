@@ -13,7 +13,7 @@ async function getUserId(token) {
     };
 
     try {
-        const response = await fetch(`http://localhost:3000/tokens/${token}`, options);
+        const response = await fetch(`https://sql-injectors.onrender.com/tokens/${token}`, options);
 
         if (response.status === 200) {
             const data = await response.json();
@@ -58,7 +58,7 @@ async function loadBookings(id) {
         }
     };
     
-     const response = await fetch(`http://localhost:3000/profile/${id}`, options)
+     const response = await fetch(`https://sql-injectors.onrender.com/profile/${id}`, options)
      console.log(response)
      
         const bookings = await response.json();
@@ -104,7 +104,7 @@ function createDeleteButton(bookingId) {
 
 async function deleteBooking(bookingId) {
     const token = localStorage.getItem('token');
-    const response = await fetch(`http://localhost:3000/profile/bookings/${bookingId}`, {
+    const response = await fetch(`https://sql-injectors.onrender.com/profile/bookings/${bookingId}`, {
         method: "DELETE",
         headers: {
             'Authorization': token,

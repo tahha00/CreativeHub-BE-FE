@@ -34,7 +34,7 @@ function myFunction() {
 
 
 function fetchClasses(){
-    fetch('http://localhost:3000/class')
+    fetch('https://sql-injectors.onrender.com/class')
     .then(resp => resp.json())
     .then(data => displayClasses(data))
 }
@@ -64,7 +64,7 @@ function fetchFilteredData() {
     const number = parseInt(location)
     const encodedDate = encodeURIComponent(date);
 
-  fetch(`http://localhost:3000/class/filter/${number}/${encodedDate}`)
+  fetch(`https://sql-injectors.onrender.com/class/filter/${number}/${encodedDate}`)
     .then(response => response.json())
     .then(data => {
       displayClasses(data)
@@ -80,7 +80,7 @@ function fetchFilteredData() {
 //   console.log(date)
 //   const encodedDate = encodeURIComponent(date);
 
-// fetch(`http://localhost:3000/class/filter/date/${encodedDate}`)
+// fetch(`https://sql-injectors.onrender.com/class/filter/date/${encodedDate}`)
 //   .then(response => response.json())
 //   .then(data => {
 //     displayClasses(data)

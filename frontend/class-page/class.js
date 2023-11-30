@@ -28,7 +28,7 @@ document.getElementById("review-form").addEventListener("submit", async (e) => {
         })
     }
 
-    const result = await fetch("http://localhost:3000/reviews", options);
+    const result = await fetch("https://sql-injectors.onrender.com/reviews", options);
 
     // console.log("Form Data:", Object.fromEntries(form.entries()));
     // console.log("Fetch Result:", result);
@@ -50,7 +50,7 @@ async function loadReviews() {
     };
 
     try {
-        const response = await fetch("http://localhost:3000/reviews", options);
+        const response = await fetch("https://sql-injectors.onrender.com/reviews", options);
 
         if (response.status === 200) {
             const reviews = await response.json();
@@ -86,7 +86,7 @@ async function getUserId(token){
         }
     };
 
-    const response = await fetch(`http://localhost:3000/tokens/${token}`, options)
+    const response = await fetch(`https://sql-injectors.onrender.com/tokens/${token}`, options)
 
     if (response.status === 200){
         const data = await response.json()
@@ -125,7 +125,7 @@ async function classId(id) {
         }
     };
 
-    const response = await fetch(`http://localhost:3000/class/${id}`, options)
+    const response = await fetch(`https://sql-injectors.onrender.com/class/${id}`, options)
 
     if (response.status === 200) {
         console.log("class ID extracted")
@@ -171,7 +171,7 @@ async function makeBooking(){
     }
      console.log(options)
 
-        const response = await fetch("http://localhost:3000/bookings", options);
+        const response = await fetch("https://sql-injectors.onrender.com/bookings", options);
 
         if (response.status === 201) {
             console.log("Booking successful!");
