@@ -30,6 +30,6 @@ describe('api server', () => {
     })
 
     test('responds to GET /class/:id/:date with status 200', (done) => {
-        request(api).get('/class/filter/1/Every_Tuesday').expect(200, done)
+        request(api).get('/class/filter/1/Every_Monday').expect(200, done)
     })
   })

@@ -9,9 +9,13 @@ describe('api server', () => {
     })
 
 
-    test('responds to POST /users/register with status 201', (done) => {
-      request(api).post('/users/register').expect(201, done)
-    })
+    test('responds to POST /users/register with status 201', async () => {
+      await request(api).post('/users/register').send({ "username": "Kengi",
+      "password": "Hi" }).expect(201)
+    }, 10000)
 
-    
+    test('responds to POST /users/login with status 200', async () => {
+      await request(api).post('/users/login').send({ "username": "Kengi",
+      "password": "Hi" }).expect(200)
+    }, 10000)
 })

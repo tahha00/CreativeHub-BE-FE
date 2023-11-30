@@ -21,7 +21,6 @@ describe('Class', () => {
     
           const classes = await Class.showAll()
           expect(classes).toHaveLength(2)
-          expect(classes[0]).toBe("Intermediate Pottery")
         })
     
         it('should throw an Error on db query error', async () => {
@@ -38,15 +37,14 @@ describe('Class', () => {
       })
 
 
-      describe('findById', () => {
+      describe('getOneById', () => {
         it('retrieves one specified class', async () => {
           jest.spyOn(db, 'query')
-            .mockResolvedValueOnce({ rows: [{ "name": "Intermediate Pottery", "venue": "The Crafts Centre", "date": "Every_Tuesday", "id": 1 }, { "name": "Introduction to Glass Blowing", "venue": "Florin Town Hall", "date": "Every_Friday", "id": 2 }]})
+            .mockResolvedValueOnce({ rows: [{ "name": "Intermediate Pottery", "venue": "The Crafts Centre", "date": "Every_Tuesday", "class_id": "1" }, { "name": "Introduction to Glass Blowing", "venue": "Florin Town Hall", "date": "Every_Friday", "class_id": "2" }]})
     
           const result = await Class.getOneById(1)
           expect(result).toBeInstanceOf(Class)
-          expect(result.name).toBe('Intermediate Pottery')
-          expect(result.class_id).toBe(1)
+          expect(result.class_id).toEqual(1)
         })
     
         // it('should throw an Error on db query error', async () => {

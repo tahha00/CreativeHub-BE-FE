@@ -17,7 +17,6 @@
   "jest": {
     "testPathIgnorePatterns": [
       "./testing/client_testing/helper.js",
-      "./testing/api_testing/unit/models/Classes.spec.js",
       "./testing/client_testing/layout.spec.js"
     ]
   },

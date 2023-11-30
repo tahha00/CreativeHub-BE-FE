@@ -23,7 +23,7 @@ class User {
         }
         return new User(response.rows[0]);
     }
-
+    
     static async create(data) {
         const { username, password } = data;
         let response = await db.query("INSERT INTO user_account (username, password) VALUES ($1, $2) RETURNING user_id;", [username, password]);

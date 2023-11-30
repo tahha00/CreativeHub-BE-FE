@@ -13,6 +13,9 @@ const show = async (req, res) => {
   try {
     const idx = parseInt(req.params.id);
     const review = await Review.getOneById(idx);
+    if (!review) {
+      res.status(404).json({ error: "Review not found" });
+  }
     res.status(200).json(review);
   } catch (err) {
     res.status(404).json({ "error": err.message });
