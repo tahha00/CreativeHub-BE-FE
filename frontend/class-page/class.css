@@ -79,7 +79,7 @@ body {
     align-items: center;
     position: absolute;
     top: 300px;
-    height: 400px;
+    height: 550px;
     width: 300px;
     border-radius: 30px;
     border: 3px solid black;
@@ -150,6 +150,7 @@ body {
   color: black;
   height: 50px;
   width: 80px;
+  cursor: pointer;
 
 }
 
@@ -194,3 +195,29 @@ body {
   margin-left: 80px;
 }
  
+#date_and_time {
+  display: none;
+}
+
+#date_and_time.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.dateBtn {
+  cursor: pointer;
+}
+
+.bookBtn {
+  cursor: pointer;
+}
