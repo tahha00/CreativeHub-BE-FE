@@ -1,5 +1,11 @@
-function fetchBookings() {
-    fetch("http://localhost:3000/profile/:id")
+function loadBookings() {
+    const token = localStorage.getItem('token');
+
+    fetch("http://localhost:3000/profile/:id",{
+        headers: {
+            'Authorization': token,
+        }
+    })
         .then(response => response.json())
         .then(bookings => {
             renderBookings(bookings);
@@ -42,9 +48,13 @@ function createDeleteButton(bookingId) {
 
 //handles the logic for sending a DELETE request to cancel a booking.
 
-function deleteBooking(bookingId) {
-    fetch(`http://localhost:3000/profile/${bookingId}`, {
+async function deleteBooking(bookingId) {
+    const token = localStorage.getItem('token');
+    await fetch(`http://localhost:3000/profile/bookings/${bookingId}`, {
         method: "DELETE",
+        headers: {
+            'Authorization': token,
+        }
     })
         .then(response => {
             if (response.ok) {
@@ -60,5 +70,12 @@ function deleteBooking(bookingId) {
         .catch(error => console.error("Error deleting booking:", error));
 }
 
+
+document.getElementById('logout').addEventListener('click', () => {
+    localStorage.removeItem('token');
+    window.location.href('./home.html')
+})
+
+
 // Initial fetching and rendering when the page loads
-fetchBookings();
+loadBookings();
