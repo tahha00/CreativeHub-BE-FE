@@ -25,15 +25,17 @@ async function show(req, res){
         }
     }
 
-async function showSpecific(req,res){
+async function getIdByName(req,res){
     try{
         const name = req.params.name
         const class_id = await Class.getOneByName(name);
+        console.log(class_id)
         res.status(200).json(class_id);
 
     }
     catch(err){
         res.status(404).json({ "error": err.message})
+        console.log(err.message)
 
     }
 }
@@ -70,4 +72,4 @@ async function filterItems(req, res) {
 
 
 
-module.exports = {index, filterItems, show, showSpecific}
+module.exports = {index, filterItems, show, getIdByName }

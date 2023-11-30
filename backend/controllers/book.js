@@ -23,6 +23,7 @@ const index = async (req, res) => {
     try {
       const data = req.body;
       const result = await Book.create(data);
+      console.log(result)
       res.status(201).send(result);
     } catch (err) {
       res.status(400).send({ "error": err.message });
