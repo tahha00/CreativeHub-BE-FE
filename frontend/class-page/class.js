@@ -174,10 +174,11 @@ async function makeBooking(){
         const response = await fetch("http://localhost:3000/bookings", options);
 
         if (response.status === 201) {
-            alert("Booking successful!");
+            console.log("Booking successful!");
 
         } else {
-            alert("Booking failed, please try again.");
+            console.log("Booking failed, please try again.")
+            alert("Successfully Booked Class!");
         }
     
 }

@@ -36,17 +36,18 @@ async function getUserId(token) {
 
 
 getUserId(token)
-  .then(userId => {
-    console.log('User ID:', userId);
-    return userId
-  })
-  .catch(error => {
-    console.error('Error:', error.message);
-  });
+    .then(userId => {
+        console.log('User ID:', userId);
+        return userId;
+    })
+    .then(globalID => loadBookings(globalID)) // Pass the globalID value to loadBookings
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
 
   
 
-async function loadBookings(globalID) {
+async function loadBookings(id) {
 
     const options = {
         method: 'GET',
@@ -54,17 +55,16 @@ async function loadBookings(globalID) {
             'Authorization': token,
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        },
+        }
     };
     
-     const response = await fetch(`http://localhost:3000/profile/${globalID}`, options)
+     const response = await fetch(`http://localhost:3000/profile/${id}`, options)
+     console.log(response)
      
-        .then(response => response.json())
-        .then(bookings => {
-            renderBookings(bookings);
-        })
-        .catch(error => console.error("Error fetching user bookings:", error));
+        const bookings = await response.json();
+        renderBookings(bookings);
 }
+
 
 
 
@@ -86,7 +86,7 @@ function renderBookings(bookings) {
     row.insertCell(2).innerText = booking.venuename;
 
     const deleteButton = createDeleteButton(booking.id);
-    const actionCell = row.insertCell(4);
+    const actionCell = row.insertCell(3);
     actionCell.appendChild(deleteButton);
     });
 }
@@ -104,7 +104,7 @@ function createDeleteButton(bookingId) {
 
 async function deleteBooking(bookingId) {
     const token = localStorage.getItem('token');
-    await fetch(`http://localhost:3000/profile/bookings/${bookingId}`, {
+    const response = await fetch(`http://localhost:3000/profile/bookings/${bookingId}`, {
         method: "DELETE",
         headers: {
             'Authorization': token,
@@ -113,9 +113,12 @@ async function deleteBooking(bookingId) {
         .then(response => {
             if (response.ok) {
                 // Remove the deleted row from the table
+                alert("Booking deleted successfully");
+                window.location.reload();
                 const rowToDelete = document.querySelector(`#bookingsTable tbody tr[data-booking-id="${bookingId}"]`);
                 if (rowToDelete) {
                     rowToDelete.remove();
+                    
                 }
             } else {
                 console.error("Error deleting booking:", response.statusText);
@@ -132,4 +135,4 @@ document.getElementById('logout').addEventListener('click', () => {
 
 
 // Initial fetching and rendering when the page loads
-loadBookings();
+loadBookings(globalID);
