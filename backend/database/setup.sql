@@ -51,10 +51,10 @@ CREATE TABLE review (
     review_id INT GENERATED ALWAYS AS IDENTITY,
     -- class_id INT NOT NULL,
     review_text VARCHAR(300) NOT NULL, 
-    --user_id INT NOT NULL, 
+    -- user_id INT NOT NULL, 
     PRIMARY KEY (review_id)
-    --FOREIGN KEY (class_id) REFERENCES class("class_id"),
-    --FOREIGN KEY (user_id) REFERENCES user_account("user_id")
+    -- FOREIGN KEY (class_id) REFERENCES class("class_id"),
+    -- FOREIGN KEY (user_id) REFERENCES user_account("user_id")
 );
 
 CREATE TABLE booking (
