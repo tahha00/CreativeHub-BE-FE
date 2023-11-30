@@ -3,7 +3,7 @@ const Class = require("../models/Classes");
 async function index (req, res) {
     try{
         const classes = await Class.showAll();
-        res.json(classes)
+        res.status(200).json(classes)
     }catch(err){
         res.status(404).json({err: err.message});
     }

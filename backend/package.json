@@ -6,6 +6,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "coverage": "jest --coverage",
+    "integrationTests": "jest --testPathPattern=/integration/ --watchAll --detectOpenHandles --runInBand --verbose",
+    "unitTests": "jest --testPathPattern=/unit/ --watchAll --verbose",
     "dev": "nodemon -L index.js",
     "dev2": "live-server",
     "dev3": "concurrently \"watchify ../../frontend/home-page/home.html --debug\" \"live-server\"",
@@ -15,7 +17,8 @@
   "jest": {
     "testPathIgnorePatterns": [
       "./testing/client_testing/helper.js",
-      "./testing/client_testing/class.spec.js"
+      "./testing/api_testing/unit/models/Classes.spec.js",
+      "./testing/client_testing/layout.spec.js"
     ]
   },
   "keywords": [],
@@ -38,6 +41,7 @@
     "live-server": "^1.2.2",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.0.1",
+    "supertest": "^6.3.3",
     "watchify": "^4.0.0"
   }
 }
