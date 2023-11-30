@@ -145,12 +145,11 @@ body {
 
 
 .submitReviewSection{
-  background-color: rgb(206, 162, 162);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  height: 300px;
 
 }
 
@@ -159,7 +158,6 @@ body {
   display: flex;
   height: 100%;
   justify-content: center;
-  background-color: black;
   width: 80%; 
   margin: auto; 
   flex-direction: column;
@@ -167,33 +165,48 @@ body {
 }
 
 #submitReviewBtn {
+  background-color: bisque;
   border-radius: 10px;
   border: 3px solid black;
   background-color: rgb(210, 210, 210);
   color: black;
-  height: 50px;
+  height: 40px;
   cursor: pointer;
   margin-top: 20px;
-  width: 50%;
+  margin-bottom: 30px;
+  width: 20%;
 
 }
 
 
 .review-container {
-  gap: 80px;
-  width: 100%;
-  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+  gap: 20px;
+  padding: 20px;
+}
+.slider-container {
+  overflow-x: auto;
+}
+.review {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: 'Roboto', monospace;
+  font-size: 15px;
+  width: calc(33.33% - 20px);
+  width: 30%; 
+  background-color: #f0f0f0;
+  color: rgb(10, 9, 9);
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-.review {
-    font-family: 'Roboto', monospace;
-    font-size: 15px;
-    width: 8%;
-    color: black;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-    padding-left: 80px;
-    scroll-snap-align: start;
+.review:hover {
+  transform: scale(1.05); /* Enlarge the review on hover */
 }
 
 .submitReviewTitle {
@@ -201,16 +214,25 @@ body {
   color: black;
   padding: 10px 80px;
   font-size: 20px;
-  margin-top: 50px;
-  margin-left: -80px;
+  margin-top: 20px;
 }
 
-.slider-container {
-  display: flex;
-  width: 80%;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+#content{
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+
+textarea {
+  width: 50%;
+  height: 100%;
+  padding: 10px; 
+  box-sizing: border-box; 
+  border: none;
+  outline: none; 
+  resize: none;
 }
 
 .submitReviewSection {
