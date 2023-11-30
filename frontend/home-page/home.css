@@ -57,11 +57,16 @@ body{
 
 #myInput{
     margin-top: 30px;
-    width: 300px;
-    height: 30px;
+    width: 320px;
+    height: 40px;
     border-radius: 20px;
     text-align: center;
+    font-size: 18px;
 }
+
+input::placeholder {
+    font-size: 20px;
+  }
 
 #list {
     display:none;
@@ -97,7 +102,17 @@ body{
     text-align: center;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
+    line-height: 2;
+    font-family: 'Roboto', monospace;
+    font-size: 30px;
+    color: rgb(63, 26, 26);
 
+
+}
+
+label{
+    font-family: 'Roboto', monospace;
+    color: rgb(63, 26, 26);
 }
 
 .class-photo {
@@ -143,11 +158,11 @@ body{
     }
 
     #filtersButton {
-        background-color: bisque;
+        background-color: rgb(249, 248, 246);
         padding: 10px;
         font-size: 18px;
         border-radius: 20px;
-        border-color: bisque;
+        border-color: rgb(223, 131, 19);
         
     }
     #filtersButtonsection{
