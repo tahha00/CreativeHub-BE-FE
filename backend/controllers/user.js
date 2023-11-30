@@ -4,7 +4,7 @@ const User = require('../models/user');
 const Token = require("../models/token");
 
 async function register (req, res) {
-    const data = req.body;
+    try{const data = req.body;
 
     const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS))
     data.password = await bcrypt.hash(data.password, salt)
@@ -12,6 +12,9 @@ async function register (req, res) {
     const result = await User.create(data)
     console.log(result);
     res.status(201).send(result);
+    } catch(err){
+        res.status(404).json({ error: err.message })
+    }
 }
 
 async function login (req, res) {

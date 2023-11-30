@@ -20,7 +20,7 @@ api.use(logRoutes);
 
 
 api.get("/", (req, res) => {
-    res.json({
+    res.status(200).send({
         name: "SQL injectors",
         description: "Group project 2"
     })
