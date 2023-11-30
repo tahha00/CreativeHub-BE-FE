@@ -89,6 +89,7 @@ async function getUserId(token){
 
     if (response.status === 200){
         console.log("id extracted")
+
         console.log(response)
     }
     else {
@@ -146,6 +147,7 @@ async function makeBooking(){
 
         if (response.status === 201) {
             alert("Booking successful!");
+
         } else {
             alert("Booking failed, please try again.");
         }
