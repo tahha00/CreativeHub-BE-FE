@@ -12,7 +12,7 @@ class Class {
 
 
     static async showAll(){
-        const response = await db.query('SELECT class.class_id, class.class_name, venue.venue_name,class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id)')
+        const response = await db.query('SELECT class.class_id, class.class_name, venue.venue_name, class_photo.photo_url, class.class_date FROM class INNER JOIN venue ON (class.venue_id = venue.venue_id) LEFT JOIN class_photo ON (class.class_id = class_photo.class_id)')
         return response.rows.map(p => new Class(p))
     } 
 

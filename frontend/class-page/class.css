@@ -43,7 +43,7 @@ body {
 
   .title {
     font-family: 'Heebo', monospace;
-    color: black;
+    color: rgb(63, 26, 26);
     padding: 10px 80px;
     margin-top: -30px;
     font-size: 50px;
@@ -56,6 +56,7 @@ body {
     font-size: 25px;
     width: 50%;
     color: black;
+    line-height: 2;
   }
 
   .teacher {
@@ -143,23 +144,49 @@ body {
   font-size: 30px;
 }
 
+
+.submitReviewSection{
+  background-color: rgb(206, 162, 162);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+
+}
+
+
+#review-form{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  background-color: black;
+  width: 80%; 
+  margin: auto; 
+  flex-direction: column;
+  align-items: center; 
+}
+
 #submitReviewBtn {
   border-radius: 10px;
   border: 3px solid black;
   background-color: rgb(210, 210, 210);
   color: black;
   height: 50px;
-  width: 80px;
   cursor: pointer;
+  margin-top: 20px;
+  width: 50%;
 
 }
 
+
 .review-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start; 
   gap: 80px;
+  width: 100%;
+  margin-bottom: 15px;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .review {
