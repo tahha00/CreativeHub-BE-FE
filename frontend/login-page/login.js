@@ -41,7 +41,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     if (response.status == 200) {
         localStorage.setItem("token", data.token);
-        window.location.assign("../class-page/jewelleryMakingClass.html");
+        window.location.assign("../profile-page/profile.html");
     } else {
         loginerror.textContent = `${data.error}`
         console.log(data.error);
