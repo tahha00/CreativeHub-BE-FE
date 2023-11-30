@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/21</span>
+                <span class='fraction'>12/20</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">57.89% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/20</span>
+                <span class='fraction'>11/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -102,16 +102,14 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,33 +128,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const db = require('../database/connect');
 &nbsp;
 class Book {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor({ booking_id, class_id, user_id, class_date, class_start}) {
-<span class="cstat-no" title="statement not covered" >        this.id = booking_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.classid = class_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.userid = user_id;</span>
-<span class="cstat-no" title="statement not covered" >        this.classdate = class_date;</span>
-<span class="cstat-no" title="statement not covered" >        this.classstart = class_start;</span>
+    constructor({ booking_id, class_id, user_id, class_time}) {
+        this.id = booking_id;
+        this.classid = class_id;
+        this.userid = user_id;
+        this.classtime = class_time; 
     }
 &nbsp;
     static async getAll() {
         const response = await db.query("SELECT * FROM booking;");
-        return response.rows.map(<span class="fstat-no" title="function not covered" >b </span>=&gt; <span class="cstat-no" title="statement not covered" >new Book(b))</span>;
+        return response.rows.map(b =&gt; new Book(b));
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    st</span>atic async getOneById(id) {
@@ -168,9 +165,9 @@ class Book {
     }
 &nbsp;
     static async create(data) {
-        const { class_id, user_id, class_date, class_start } = data;
-        let response = await db.query("INSERT INTO booking (class_id, user_id, class_date, class_start) VALUES ($1, $2, $3, $4);", [class_id, user_id, class_date, class_start])
-        const bookingId = <span class="cstat-no" title="statement not covered" >response.rows[0].booking_id;</span>
+        const { class_id, user_id, class_time } = data;
+        let response = await db.query("INSERT INTO booking (class_id, user_id, class_time) VALUES ($1, $2, $3);", [class_id, user_id, class_time])
+        const bookingId = response.rows[0].booking_id;
         const newBook = <span class="cstat-no" title="statement not covered" >await Book.getOneById(bookingId)</span>
 <span class="cstat-no" title="statement not covered" >        return newBook</span>
     }
@@ -190,7 +187,7 @@ module.exports = Book
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-30T16:34:30.141Z
+                at 2023-11-30T18:26:47.651Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

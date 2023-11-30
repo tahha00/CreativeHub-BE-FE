@@ -3,6 +3,10 @@ const Token =  require("../models/token")
 async function show(req,res){
     try{
         const token = req.params.token
+        if (!token) {
+            res.status(404).json({ error: "Token not found" });
+            return;
+        }
         const response = await Token.getOneByToken(token)
         const user = response.user_id;
         console.log(`the user id is ${user}`)

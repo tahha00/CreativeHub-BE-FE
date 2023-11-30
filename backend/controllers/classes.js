@@ -16,9 +16,9 @@ async function show(req, res){
     try{
             const id = parseInt(req.params.id);
             const snack = await Class.getOneById(id);
-            if (snack.length === 0) {
-                return res.status(404).json({ error: 'No class found.'});
-            }
+            // if (snack.length === 0) {
+            //     return res.status(404).json({ error: 'No class found.'});
+            // }
             res.status(200).json(snack);
         } catch (err) {
             res.status(404).json({error: "Something happened to your db"});

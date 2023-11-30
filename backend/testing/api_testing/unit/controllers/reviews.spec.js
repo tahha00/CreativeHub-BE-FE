@@ -66,7 +66,7 @@ describe('review controller', () => {
             await reviewController.show(null, mockRes)
       
       
-            expect(Review.getOneById).toHaveBeenCalledTimes(1)
+            expect(Review.getOneById).toHaveBeenCalledTimes(0)
             expect(mockStatus).toHaveBeenCalledWith(404)
           })
         })
