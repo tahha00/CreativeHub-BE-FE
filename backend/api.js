@@ -8,7 +8,6 @@ const classesRouter = require ('./routers/classes');
 const reviewRouter = require("./routers/reviews")
 const bookingRouter = require("./routers/book");
 const profileRouter = require('./routers/profile');
-//const bookingRouter = require("./routers/book")
 const tokenRouter = require("./routers/token")
 
 
