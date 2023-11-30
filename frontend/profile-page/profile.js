@@ -73,7 +73,7 @@ async function deleteBooking(bookingId) {
 
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.removeItem('token');
-    window.location.href('./home.html')
+    window.location.href('../home-page/home.html')
 })
 
 

@@ -75,6 +75,7 @@ loadReviews()
 
 //!BOOKING
 
+let globaluserId;
 
 async function getUserId(token){
     const options = {
@@ -88,9 +89,11 @@ async function getUserId(token){
     const response = await fetch(`http://localhost:3000/tokens/${token}`, options)
 
     if (response.status === 200){
-        console.log("id extracted")
-
+        const data = await response.json()
+        globaluserId = data
+        return data;
         console.log(response)
+        console.log("id extracted")
     }
     else {
         console.log("could not find a valid token")
@@ -101,7 +104,16 @@ async function getUserId(token){
 const token = localStorage.getItem("token")
 //getUserId(token);
 
-const userID = getUserId(token)
+// const userID = getUserId(token)
+
+getUserId(token)
+  .then(userId => {
+    console.log('User ID:', userId);
+    return userId
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  });
 
 
 async function classId(id) {
@@ -124,7 +136,22 @@ async function classId(id) {
 }
 
 //let classid = classId(id)
-console.log(userID)
+//console.log(userID)
+
+let classtime = document.querySelector("#classtime").textContent
+
+let classname = document.querySelector("#classtitle").textContent
+let classID;
+
+if(classname === "Pottery Mondays!"){
+    classID = 1
+}
+else if(classname === "Jewellery Tuesdays!"){
+    classID = 2
+}
+else if(classname === "Woodwork Wednesdays!"){
+    classID = 3
+}
 
 
 async function makeBooking(){
@@ -137,8 +164,9 @@ async function makeBooking(){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            user_id: userID,
-            class_id: 3
+            user_id: globaluserId,
+            class_id: classID,
+            class_time: classtime
         })
     }
      console.log(options)
