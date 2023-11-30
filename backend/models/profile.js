@@ -21,11 +21,11 @@ class Bookings {
         if (response.rows.length != 1) {
             throw new Error("Booking not found")
         }
-        return new Book(response.rows[0]);
+        return new Bookings(response.rows[0]);
     }
 
     async destroy(){
-        let response = await db.query("DELETE FROM booking WHERE booking_id = $1 RETURNING *;", [this.booking_id])
+        let response = await db.query("DELETE FROM booking WHERE booking_id = $1 RETURNING *;", [this.id])
         return new Bookings(response.rows[0])
     }
 }
