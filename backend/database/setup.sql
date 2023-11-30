@@ -94,3 +94,12 @@ VALUES
     ('History of Florin', 5, '18:00:00', '20:00:00', 5, FALSE, 'Every_Saturday', 'Beginner', 47586747495, 'steve@florinhistory.co.uk'),
     ('Introduction to Crocheting', 1, '10:00:00', '12:00:00', 5, FALSE, 'Every_Monday', 'Beginner', 47586747495, 'maurine@florincrafts.co.uk'),
     ('Perfect Recycling Practices', 3, '18:00:00', '19:00:00', 5, FALSE, 'Every_Tuesday', 'Beginner', 47586747495, 'lucy@florincountycouncil.co.uk');
+
+
+INSERT INTO user_account (username, password) 
+VALUES ('Ale', 'fines');
+
+INSERT INTO booking (class_id, user_id, class_date, class_start)
+VALUES
+(1, 1, '2023-12-01', '18:00:00'),
+(2, 1, '2023-12-02', '19:00:00');
