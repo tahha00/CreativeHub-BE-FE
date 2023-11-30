@@ -43,7 +43,7 @@ describe('review controller', () => {
     })
   
     describe('show', () => {
-        it('returns one specific reviews with a status code 200', async () => {
+        it('returns one specific review with a status code 200', async () => {
             jest.spyOn(Review, 'getOneById')
               .mockResolvedValue({rows: [{"name": "Kengi", "review": "Fantastic", "review_id": 1}, { "name": "George" , "review": "Thiss is good", "review_id": 2}]})
       
@@ -53,20 +53,20 @@ describe('review controller', () => {
       
       
             expect(Review.getOneById).toHaveBeenCalledTimes(1)
-            expect(mockStatus).toHaveBeenCalledWith(200)
+            expect(mockStatus).toHaveBeenCalledWith(200) 
           })
     
           it('it sends an error upon fail', async () => {
             const errorMessage = 'No reviews exists';
-            jest.spyOn(Review, 'getAll')
+            jest.spyOn(Review, 'getOneById')
               .mockImplementation(async (data) => {
                 throw new Error(errorMessage);
               });
       
-            await reviewController.index(null, mockRes)
+            await reviewController.show(null, mockRes)
       
       
-            expect(Review.getAll).toHaveBeenCalledTimes(1)
+            expect(Review.getOneById).toHaveBeenCalledTimes(1)
             expect(mockStatus).toHaveBeenCalledWith(404)
           })
         })
