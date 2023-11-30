@@ -202,5 +202,3 @@ submitData.addEventListener("click", makeBooking)
 
 
 
-
-

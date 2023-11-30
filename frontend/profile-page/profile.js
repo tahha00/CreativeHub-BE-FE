@@ -1,17 +1,71 @@
-function loadBookings() {
-    const token = localStorage.getItem('token');
+let globalID; 
 
-    fetch("http://localhost:3000/profile/:id",{
+const token = localStorage.getItem("token"); 
+
+
+async function getUserId(token) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    };
+
+    try {
+        const response = await fetch(`http://localhost:3000/tokens/${token}`, options);
+
+        if (response.status === 200) {
+            const data = await response.json();
+            
+            // Assuming data is an integer value
+            globalID = data;
+            
+
+            console.log("The user ID is:", globalID);
+            return data;
+        } else {
+            console.log("Could not find a valid token");
+            throw new Error("Invalid token");
+        }
+    } catch (error) {
+        console.error("Error:", error.message);
+        throw error;
+    }
+}
+
+
+getUserId(token)
+  .then(userId => {
+    console.log('User ID:', userId);
+    return userId
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  });
+
+  
+
+async function loadBookings(globalID) {
+
+    const options = {
+        method: 'GET',
         headers: {
             'Authorization': token,
-        }
-    })
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    };
+    
+     const response = await fetch(`http://localhost:3000/profile/${globalID}`, options)
+     
         .then(response => response.json())
         .then(bookings => {
             renderBookings(bookings);
         })
         .catch(error => console.error("Error fetching user bookings:", error));
 }
+
 
 
 //handles rendering the fetched bookings in the table.
@@ -27,9 +81,9 @@ function renderBookings(bookings) {
 
     // Insert data into the row cells
     row.insertCell(0).innerText = booking.name;
-    row.insertCell(1).innerText = booking.classdate;
-    row.insertCell(2).innerText = booking.classstart;
-    row.insertCell(3).innerText = booking.venuename;
+    // row.insertCell(1).innerText = booking.classdate;
+    row.insertCell(1).innerText = booking.classstart;
+    row.insertCell(2).innerText = booking.venuename;
 
     const deleteButton = createDeleteButton(booking.id);
     const actionCell = row.insertCell(4);
