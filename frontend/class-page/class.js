@@ -190,10 +190,10 @@ const submitData = document.querySelector(".bookBtn")
 submitData.addEventListener("click", makeBooking)
 
 
-
-
-
-
+const loginbtn = document.querySelector(".login")
+if (token) {
+    loginbtn.style.display = "none"
+}
 
 
 
