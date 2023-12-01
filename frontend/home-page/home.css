@@ -31,6 +31,7 @@ body{
   .logo {
     width: 20%;
     position: absolute;
+    margin-top: 40px;;
     top: 50%;
     transform: translateY(-50%);
     }
@@ -121,7 +122,7 @@ label{
   }
 .filterContainer{
     background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.506);
+    background-color: rgba(255, 255, 255, 0.732);
     display: flex;
     flex-wrap: wrap;
     padding-top: 60px;
@@ -158,16 +159,23 @@ label{
     }
 
     #filtersButton {
-        background-color: rgb(249, 248, 246);
         padding: 10px;
-        font-size: 18px;
-        border-radius: 20px;
-        border-color: rgb(223, 131, 19);
+        cursor: pointer;
+        border: 2px solid #163610;
+        background-color: white;
+        border-radius: 10px;
+        padding: 0;
+        font-family: 'Heebo', monospace; 
+        color: #163610; 
+        font-weight: bold;
+        width: 10%;
+        height: 35px;
+        font-size: 16px;
         
     }
     #filtersButtonsection{
     background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.506);
+    background-color: rgba(255, 255, 255, 0.732);
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
@@ -177,7 +185,7 @@ label{
 
 .class-container {
     background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.506);
+    background-color: rgba(255, 255, 255, 0.732);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -192,12 +200,13 @@ label{
 
 .class-separator {
     background-color: wheat;
-    width: 200px;
+    width: 250px;
     margin: 30px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     text-align: center;
+    border-radius: 40px;
 }
 
 .class-card img {
@@ -207,6 +216,14 @@ label{
     border-radius: 8px;
     cursor: pointer;
 }
+
+img {
+    width: 40%;
+    height: 250px;
+    object-fit: cover;
+    margin: 20px;
+    border-radius: 40px;
+  }
 
 .class-card p {
     margin: 8px 0;
